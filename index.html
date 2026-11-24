@@ -2,889 +2,713 @@
 <html lang="es-HN">
 <head>
 <!-- =====================================================================
-     ESENCIA & BRILLO · Maison de fragancias y joyería
-     Simulación de tienda en línea · Comercio Electrónico · Grupo 2 · UTH
-     Un solo archivo (HTML + CSS + JS) listo para GitHub Pages.
-     Fotografías: Unsplash y Pexels (licencia libre), cargadas desde images.unsplash.com
+     ESENCIA & BRILLO · Tienda en línea
+     San Pedro Sula, Honduras · Un solo archivo (HTML + CSS + JS)
+     Fotos: img/hd/ (sin fondo, WebP 800/1600/3840 px), generadas por
+     .github/workflows/procesar-fotos.yml a partir de Unsplash y Pexels.
      ===================================================================== -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ESENCIA & BRILLO · Maison de fragancias y joyería · San Pedro Sula</title>
-<meta name="description" content="Esencia & Brillo, maison de fragancias, joyería, bisutería, accesorios y regalos para mujer en San Pedro Sula, Honduras. Arma tu selección y finaliza por WhatsApp." />
-<meta name="theme-color" content="#0e0c0b" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="ESENCIA & BRILLO · Maison" />
-<meta property="og:description" content="Fragancias, joyería y accesorios. Atención personalizada y entrega a domicilio." />
-<meta property="og:image" content="img/maison.jpg" />
-<link rel="preconnect" href="https://images.unsplash.com" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230e0c0b'/%3E%3Ctext x='32' y='42' font-family='Georgia' font-size='30' text-anchor='middle' fill='%23c8a96a'%3EE%26B%3C/text%3E%3C/svg%3E" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Store","name":"Esencia & Brillo","description":"Fragancias, joyería, bisutería, accesorios y kits de regalo para mujer","address":{"@type":"PostalAddress","addressLocality":"San Pedro Sula","addressRegion":"Cortés","addressCountry":"HN"},"currenciesAccepted":"HNL"}
-</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Esencia & Brillo · Fragancias, joyería y accesorios · San Pedro Sula</title>
+<meta name="description" content="Fragancias, joyería de acero inoxidable, bisutería, accesorios y regalos para mujer en San Pedro Sula, Honduras. Arma tu bolsa y finaliza tu pedido por WhatsApp.">
+<meta name="theme-color" content="#fbfbfd">
+<link rel="canonical" href="https://angiebarave18.github.io/esencia-y-brillo/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Esencia & Brillo">
+<meta property="og:title" content="Esencia & Brillo · Fragancias y joyería">
+<meta property="og:description" content="Calidad accesible, atención personalizada y entrega a domicilio en San Pedro Sula.">
+<meta property="og:url" content="https://angiebarave18.github.io/esencia-y-brillo/">
+<meta property="og:image" content="https://angiebarave18.github.io/esencia-y-brillo/img/hd/perfume-ambar-1600.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="img/hd/perfume-ambar-1600.webp" imagesrcset="img/hd/perfume-ambar-800.webp 800w, img/hd/perfume-ambar-1600.webp 1600w, img/hd/perfume-ambar-3840.webp 3840w" imagesizes="(max-width: 734px) 90vw, 50vw">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d1d1f'/%3E%3Ctext x='32' y='41' font-family='Georgia' font-size='26' text-anchor='middle' fill='%23d4b26f'%3EE%26B%3C/text%3E%3C/svg%3E">
 
 <style>
-/* Tipografías alojadas en el propio repositorio (licencia OFL) */
+/* =====================================================================
+   1. FUENTES Y SISTEMA DE DISEÑO
+   Texto: fuente del sistema (SF Pro en Apple, Segoe UI en Windows, Roboto en Android)
+   Marca: Bodoni Moda (incluida en fonts/, licencia OFL)
+   ===================================================================== */
 @font-face{font-family:'Bodoni Moda';src:url(fonts/BodoniModa.ttf) format('truetype');font-weight:400 900;font-style:normal;font-display:swap}
 @font-face{font-family:'Bodoni Moda';src:url(fonts/BodoniModa-Italic.ttf) format('truetype');font-weight:400 900;font-style:italic;font-display:swap}
-@font-face{font-family:'Jost';src:url(fonts/Jost.ttf) format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
-/* =====================================================================
-   1. SISTEMA DE DISEÑO
-   ===================================================================== */
 :root{
-  --noir:#0e0c0b; --noir-2:#1a1715; --noir-3:#2a2522;
-  --ivory:#f7f3ec; --ivory-2:#efe8dc; --sand:#e4d8c6;
-  --champagne:#c8a96a; --champagne-2:#a8874a; --champagne-3:#e9d7ad;
-  --ink:#1a1715; --mute:#7c736b; --line:rgba(26,23,21,.12); --line-l:rgba(247,243,236,.14);
-  --serif:'Bodoni Moda',Didot,'Times New Roman',serif;
-  --sans:'Jost',system-ui,sans-serif;
-  --ease:cubic-bezier(.22,.8,.18,1);
-  --t:.6s var(--ease);
+  --bg:#fbfbfd; --tile:#f5f5f7; --tile-2:#e8e8ed; --white:#fff;
+  --ink:#1d1d1f; --ink-2:#424245; --mute:#6e6e73; --line:#d2d2d7;
+  --dark:#000; --dark-2:#161617; --dark-tile:#1d1d1f; --on-dark:#f5f5f7; --on-dark-2:#a1a1a6;
+  --blue:#0071e3; --blue-h:#0077ed; --link:#0066cc; --link-dark:#2997ff;
+  --gold:#b08d4c; --gold-l:#d4b26f; --new:#b64400; --ok:#1d8348;
+  --r-s:12px; --r:18px; --r-l:28px;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif;
+  --serif:'Bodoni Moda',Didot,Georgia,serif;
+  --ease:cubic-bezier(.28,.11,.32,1);
+  --shadow:0 4px 12px rgba(0,0,0,.06),0 12px 40px rgba(0,0,0,.06);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--ivory);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-body.bloqueado{overflow:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);font-size:17px;line-height:1.47;letter-spacing:-.022em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button,input,select,textarea{font:inherit;color:inherit}
-button{cursor:pointer;border:none;background:none}
-::selection{background:var(--champagne);color:var(--noir)}
-:focus-visible{outline:1px solid var(--champagne);outline-offset:4px}
-.wrap{width:min(1320px,90%);margin-inline:auto}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.kicker{font-size:.7rem;font-weight:400;letter-spacing:.42em;text-transform:uppercase;color:var(--champagne-2)}
-.display{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
-.display em{font-style:italic;color:var(--champagne-2)}
-.h2{font-size:clamp(2.4rem,5.4vw,4.6rem)}
-.lead{font-size:1.08rem;color:var(--mute);max-width:540px}
-section{padding:140px 0;position:relative}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+button,input,select,textarea{font:inherit;color:inherit;letter-spacing:inherit}
+button{cursor:pointer;background:none;border:0}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:min(1024px,87.5%);margin-inline:auto}
+.wrap-l{width:min(1440px,94%);margin-inline:auto}
+.chev::after{content:" ›";font-size:1.1em}
 
-/* Imágenes con carga elegante */
-.ph{position:relative;overflow:hidden;height:100%;background:linear-gradient(120deg,var(--ivory-2),var(--sand),var(--ivory-2));background-size:200% 100%;animation:shimmer 2.4s linear infinite}
-.ph img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s var(--ease),transform 1.6s var(--ease)}
-.ph img.ok{opacity:1}
-.ph.lista{animation:none}
-.ph .fallback{position:absolute;inset:0;display:grid;place-items:center;background:var(--noir-2)}
-@keyframes shimmer{to{background-position:-200% 0}}
-
-/* =====================================================================
-   2. PANTALLA DE ENTRADA (logo animado)
-   ===================================================================== */
-.intro{position:fixed;inset:0;z-index:999;background:var(--noir);display:grid;place-items:center;transition:clip-path 1.2s var(--ease) .2s;clip-path:inset(0 0 0 0)}
-.intro.fuera{clip-path:inset(0 0 100% 0)}
-.intro svg{width:150px;height:150px}
-.intro .trazo{stroke-dasharray:360;stroke-dashoffset:360;animation:trazo 1.6s var(--ease) forwards}
-.intro .mono{opacity:0;animation:aparece .9s var(--ease) .8s forwards}
-.intro p{position:absolute;bottom:12%;left:0;right:0;text-align:center;color:var(--champagne);font-size:.68rem;letter-spacing:.6em;opacity:0;animation:aparece 1s var(--ease) 1s forwards}
-@keyframes trazo{to{stroke-dashoffset:0}}
-@keyframes aparece{to{opacity:1}}
+/* Tipografía estilo Apple */
+.eyebrow{font-size:21px;font-weight:600;letter-spacing:.011em;color:var(--new);margin-bottom:6px}
+.h-hero{font-size:clamp(48px,8vw,96px);line-height:1.04;font-weight:700;letter-spacing:-.015em}
+.h-1{font-size:clamp(40px,5.6vw,64px);line-height:1.06;font-weight:700;letter-spacing:-.009em}
+.h-2{font-size:clamp(32px,4vw,48px);line-height:1.08;font-weight:700;letter-spacing:-.003em}
+.h-3{font-size:clamp(24px,2.6vw,32px);line-height:1.125;font-weight:600;letter-spacing:.004em}
+.sub{font-size:clamp(21px,2.4vw,28px);line-height:1.14;font-weight:400;letter-spacing:.007em}
+.body-l{font-size:21px;line-height:1.38;letter-spacing:.011em}
+.muted{color:var(--mute)}
+.marca-serif{font-family:var(--serif);letter-spacing:.02em}
 
 /* =====================================================================
-   3. CURSOR PERSONALIZADO (solo escritorio)
+   2. BOTONES Y ENLACES (CTA)
    ===================================================================== */
-.cursor{position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;background:var(--champagne);pointer-events:none;z-index:998;mix-blend-mode:difference;transition:width .35s var(--ease),height .35s var(--ease),background .35s}
-.cursor.grande{width:72px;height:72px;background:var(--ivory)}
-.cursor span{position:absolute;inset:0;display:grid;place-items:center;font-size:.6rem;letter-spacing:.2em;color:var(--noir);opacity:0;transition:opacity .3s}
-.cursor.grande span{opacity:1}
-@media (pointer:coarse){.cursor{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 22px;border-radius:980px;font-size:17px;font-weight:400;letter-spacing:-.022em;transition:background .25s var(--ease),transform .2s var(--ease),box-shadow .25s;white-space:nowrap;text-decoration:none!important}
+.btn:active{transform:scale(.97)}
+.btn-primario{background:var(--blue);color:#fff}
+.btn-primario:hover{background:var(--blue-h)}
+.btn-borde{border:1px solid var(--blue);color:var(--blue)}
+.btn-borde:hover{background:var(--blue);color:#fff}
+.btn-oscuro{background:var(--ink);color:#fff}
+.btn-oscuro:hover{background:#333336}
+.btn-claro{background:var(--on-dark);color:var(--ink)}
+.btn-wa{background:#1a8a4a;color:#fff}
+.btn-wa:hover{background:#15753e}
+.btn-xl{min-height:56px;font-size:17px;padding:16px 28px;width:100%}
+.btn-s{min-height:32px;padding:6px 15px;font-size:14px}
+.ctas{display:flex;gap:16px 28px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.link-cta{font-size:19px}
+.dark .link-cta,.on-dark a{color:var(--link-dark)}
 
 /* =====================================================================
-   4. ENCABEZADO
+   3. NAVEGACIÓN GLOBAL (translúcida)
    ===================================================================== */
-.aviso{background:var(--noir);color:var(--champagne-3);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;overflow:hidden;white-space:nowrap;height:34px;display:flex;align-items:center;position:relative;z-index:61}
-.aviso-track{display:inline-flex;gap:60px;animation:marquee 60s linear infinite;padding-left:60px}
-.header{position:fixed;top:34px;left:0;right:0;z-index:60;transition:background var(--t),top var(--t),color var(--t),border-color var(--t);color:var(--ivory);border-bottom:1px solid transparent}
-.header.solid{top:0;background:rgba(247,243,236,.93);backdrop-filter:blur(18px) saturate(1.4);color:var(--ink);border-color:var(--line)}
-.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:92px}
-.menu{display:flex;gap:34px;list-style:none;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:400}
-.menu a{position:relative;padding:6px 0}
-.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
-.menu a:hover::after{transform:scaleX(1);transform-origin:left}
-.marca{display:flex;flex-direction:column;align-items:center;gap:5px;line-height:1}
-.marca svg{width:42px;height:42px}
-.marca .wm{font-family:var(--serif);font-size:1.16rem;letter-spacing:.34em;font-weight:500;padding-left:.34em}
-.marca .sub{font-size:.48rem;letter-spacing:.55em;opacity:.7;padding-left:.55em}
-.acc{display:flex;justify-content:flex-end;gap:24px;align-items:center;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase}
-.acc button{display:flex;align-items:center;gap:10px}
-.acc svg{width:20px;height:20px}
-.badge-n{min-width:20px;height:20px;border-radius:50%;background:var(--champagne);color:var(--noir);font-size:.64rem;display:inline-grid;place-items:center;letter-spacing:0;font-weight:500;transition:transform .4s var(--ease)}
-.badge-n.pop{transform:scale(1.5)}
-.burger{display:none!important}
+.gnav{position:sticky;top:0;z-index:100;height:48px;background:rgba(251,251,253,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08)}
+.gnav .wrap-l{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:1024px}
+.logo{display:flex;align-items:center;gap:9px;color:var(--ink);text-decoration:none!important}
+.logo svg{width:26px;height:26px}
+.logo span{font-family:var(--serif);font-size:16px;font-weight:500;letter-spacing:.14em}
+.gnav ul{display:flex;list-style:none;gap:clamp(14px,2.6vw,36px)}
+.gnav ul a{color:var(--ink);opacity:.8;font-size:12px;letter-spacing:-.01em;transition:opacity .2s}
+.gnav ul a:hover{opacity:1;text-decoration:none}
+.gnav-acc{display:flex;gap:18px;align-items:center}
+.ico-btn{width:32px;height:44px;display:grid;place-items:center;color:var(--ink);opacity:.85;position:relative}
+.ico-btn:hover{opacity:1}
+.ico-btn svg{width:17px;height:17px}
+.bolsa-n{position:absolute;top:9px;right:-3px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--ink);color:#fff;font-size:10px;font-weight:600;display:grid;place-items:center;letter-spacing:0;transform:scale(0);transition:transform .35s var(--ease)}
+.bolsa-n.on{transform:scale(1)}
+.bolsa-n.pop{animation:pop .45s var(--ease)}
+@keyframes pop{40%{transform:scale(1.35)}}
+.burger{display:none}
+.ribbon{background:var(--tile);text-align:center;font-size:14px;padding:12px 6%;color:var(--ink-2)}
 
 /* =====================================================================
-   5. HERO EDITORIAL
+   4. PORTADA
    ===================================================================== */
-.hero{height:100vh;min-height:700px;padding:0;color:var(--ivory);overflow:hidden;background:var(--noir)}
-.hero>.ph{position:absolute;inset:0;background:var(--noir);animation:none}
-.hero>.ph img{transform:scale(1.14);filter:saturate(.85) contrast(1.05)}
-.hero>.ph img.ok{transform:scale(1);opacity:.8;transition:opacity 1.6s var(--ease),transform 6s var(--ease)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,12,11,.6) 0%,rgba(14,12,11,.12) 38%,rgba(14,12,11,.88) 100%)}
-.hero-in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:9vh}
-.hero h1{font-size:clamp(3.4rem,9.6vw,9.4rem);max-width:12ch}
-.hero h1 .l{display:block;overflow:hidden;padding-bottom:.06em}
-.hero h1 .l>span{display:inline-block;transform:translateY(110%);transition:transform 1.4s var(--ease)}
-.hero.vivo h1 .l>span{transform:none}
-.hero.vivo h1 .l:nth-child(2)>span{transition-delay:.12s}
-.hero h1 em{color:var(--champagne-3)}
-.hero-pie{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:40px;flex-wrap:wrap;opacity:0;transform:translateY(20px);transition:1.2s var(--ease) .5s}
-.hero.vivo .hero-pie{opacity:1;transform:none}
-.hero-pie p{max-width:430px;color:rgba(247,243,236,.82);font-size:1.02rem}
-.scroll-ind{position:absolute;right:5%;bottom:9vh;z-index:2;writing-mode:vertical-rl;font-size:.6rem;letter-spacing:.4em;display:flex;align-items:center;gap:14px;color:var(--champagne-3)}
-.scroll-ind::after{content:"";width:1px;height:70px;background:linear-gradient(var(--champagne),transparent);animation:baja 2.2s var(--ease) infinite}
-@keyframes baja{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero{text-align:center;padding:56px 0 0;overflow:hidden;background:var(--bg)}
+.hero .eyebrow{color:var(--gold)}
+.hero h1{margin:0 auto}
+.hero .sub{color:var(--ink-2);margin-top:10px}
+.hero-img{position:relative;width:min(760px,90vw);margin:28px auto 0;aspect-ratio:1/1}
+.hero-img img{width:100%;height:100%;object-fit:contain;transform:scale(calc(1.06 - var(--p,0)*.06)) translateY(calc(var(--p,0)*-20px));filter:drop-shadow(0 40px 50px rgba(80,60,20,.18));will-change:transform}
+.hero-glow{position:absolute;inset:20% 10% 5%;background:radial-gradient(closest-side,rgba(212,178,111,.28),transparent);filter:blur(30px);z-index:-1}
+.hero-tags{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin:8px 0 60px;color:var(--mute);font-size:14px}
+.hero-tags span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold-l);margin-right:8px;vertical-align:middle}
 
 /* =====================================================================
-   6. BOTONES
+   5. MOSAICOS (tiles) DE LÍNEAS
    ===================================================================== */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:18px 34px;font-size:.68rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;position:relative;overflow:hidden;isolation:isolate;transition:color .5s var(--ease),border-color .5s;white-space:nowrap}
-.btn::before{content:"";position:absolute;inset:0;z-index:-1;transform:scaleY(0);transform-origin:bottom;transition:transform .6s var(--ease)}
-.btn:hover::before{transform:scaleY(1)}
-.btn .fl{transition:transform .5s var(--ease)}
-.btn:hover .fl{transform:translateX(6px)}
-.btn-claro{background:var(--ivory);color:var(--noir)}
-.btn-claro::before{background:var(--champagne)}
-.btn-linea{border:1px solid currentColor}
-.btn-linea::before{background:var(--ivory)}
-.btn-linea:hover{color:var(--noir)}
-.btn-linea.osc::before{background:var(--noir)}
-.btn-linea.osc:hover{color:var(--ivory)}
-.btn-noir{background:var(--noir);color:var(--ivory)}
-.btn-noir::before{background:var(--champagne-2)}
-.btn-wa{background:#1f8f4e;color:#fff}
-.btn-wa::before{background:#176b3a}
-.btn-full{width:100%}
-.btn:active{transform:scale(.98)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
+.tile{position:relative;background:var(--tile);border-radius:var(--r);overflow:hidden;text-align:center;padding:52px 24px 0;min-height:580px;display:flex;flex-direction:column;align-items:center}
+.tile.full{grid-column:1/-1;min-height:640px}
+.tile.dark{background:var(--dark-tile);color:var(--on-dark)}
+.tile.dark .muted{color:var(--on-dark-2)}
+.tile .h-2{margin-bottom:6px}
+.tile .tile-img{flex:1;width:100%;display:flex;align-items:flex-end;justify-content:center;margin-top:16px}
+.tile .tile-img img{width:min(440px,80%);aspect-ratio:1/1;object-fit:contain;transition:transform 1.2s var(--ease);filter:drop-shadow(0 24px 30px rgba(0,0,0,.16))}
+.tile.full .tile-img img{width:min(540px,70%)}
+.tile:hover .tile-img img{transform:scale(1.04) translateY(-6px)}
+.tile .ctas{margin-top:14px}
+.tile .marca-serif{font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.tile.dark .marca-serif{color:var(--gold-l)}
 
 /* =====================================================================
-   7. MARQUESINA DE SUB-MARCAS (logos)
+   6. CATEGORÍAS (carrusel con miniaturas)
    ===================================================================== */
-.marquee{background:var(--noir);color:var(--ivory);padding:34px 0;overflow:hidden;border-top:1px solid var(--line-l)}
-.marquee-track{display:flex;gap:90px;width:max-content;animation:marquee 38s linear infinite;align-items:center}
-.marquee:hover .marquee-track{animation-play-state:paused}
-@keyframes marquee{to{transform:translateX(-50%)}}
-.sublogo{display:flex;align-items:center;gap:16px;opacity:.8;transition:opacity .4s}
-.sublogo:hover{opacity:1}
-.sublogo svg{width:44px;height:44px;flex:0 0 auto;color:var(--champagne)}
-.sublogo b{font-family:var(--serif);font-weight:400;font-size:1.5rem;letter-spacing:.08em}
-.sublogo small{display:block;font-size:.55rem;letter-spacing:.42em;color:var(--champagne)}
+.seccion{padding:100px 0}
+.seccion-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:34px;flex-wrap:wrap}
+.cat-scroll{display:flex;gap:26px;overflow-x:auto;padding:6px 0 18px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.cat-scroll::-webkit-scrollbar{display:none}
+.cat-item{flex:0 0 auto;width:132px;text-align:center;color:var(--ink);scroll-snap-align:start;text-decoration:none!important}
+.cat-item .ci{width:132px;height:100px;border-radius:var(--r-s);display:grid;place-items:center;transition:transform .4s var(--ease)}
+.cat-item img{width:96px;height:96px;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.12))}
+.cat-item:hover .ci{transform:translateY(-4px)}
+.cat-item b{display:block;font-size:14px;font-weight:600;margin-top:10px}
+.cat-item.sel b{color:var(--blue)}
 
 /* =====================================================================
-   8. MANIFIESTO + CATEGORÍAS
+   7. TIENDA: controles y tarjetas de producto
    ===================================================================== */
-.manifiesto{text-align:center;padding:160px 0 120px}
-.manifiesto p.display{font-size:clamp(1.9rem,3.8vw,3.4rem);max-width:22ch;margin:26px auto 0}
-.firma{margin-top:40px;display:inline-flex;align-items:center;gap:18px;color:var(--mute);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase}
-.firma::before,.firma::after{content:"";width:50px;height:1px;background:var(--champagne)}
-.cats{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:340px 340px;gap:18px}
-.cat{position:relative;overflow:hidden;color:var(--ivory);display:block}
-.cat:first-child{grid-row:span 2}
-.cat .ph{position:absolute;inset:0}
-.cat:hover .ph img.ok{transform:scale(1.07)}
-.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(14,12,11,.8))}
-.cat-txt{position:absolute;left:30px;right:30px;bottom:28px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end}
-.cat-txt h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,2.6vw,2.6rem);line-height:1}
-.cat-txt small{display:block;font-size:.6rem;letter-spacing:.36em;text-transform:uppercase;color:var(--champagne-3);margin-bottom:10px}
-.cat-txt span{width:48px;height:48px;border:1px solid rgba(247,243,236,.5);border-radius:50%;display:grid;place-items:center;transition:var(--t);flex:0 0 auto}
-.cat:hover .cat-txt span{background:var(--ivory);color:var(--noir);transform:rotate(-45deg)}
-
-/* =====================================================================
-   9. TIENDA
-   ===================================================================== */
-.tienda{background:var(--ivory-2)}
-.tienda-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
-.filtros{display:flex;gap:10px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:46px}
-.chip{padding:10px 18px;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;border:1px solid transparent;transition:var(--t)}
-.chip:hover{border-color:var(--line)}
-.chip.sel{background:var(--noir);color:var(--ivory)}
-.filtros .der{margin-left:auto;display:flex;gap:14px;align-items:center}
-.buscar{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--ink);padding:6px 2px}
-.buscar input{border:none;background:transparent;outline:none;width:180px;font-size:.88rem}
-.sel-orden{background:transparent;border:1px solid var(--line);padding:10px 14px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
-.conteo{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-bottom:24px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:50px 26px}
-.card{cursor:pointer;animation:entra .8s var(--ease) both}
-@keyframes entra{from{opacity:0;transform:translateY(30px)}}
-.card-media{position:relative;aspect-ratio:3/4;overflow:hidden}
-.card:hover .ph img.ok{transform:scale(1.06)}
-.etq{position:absolute;top:16px;left:16px;z-index:2;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;background:var(--ivory);padding:6px 10px}
-.etq.oscura{background:var(--noir);color:var(--champagne-3)}
-.quick{position:absolute;left:0;right:0;bottom:0;z-index:2;background:rgba(14,12,11,.9);color:var(--ivory);display:grid;grid-template-columns:1fr 1fr;transform:translateY(101%);transition:transform .6s var(--ease)}
-.card:hover .quick,.card:focus-within .quick{transform:none}
-.quick button{padding:16px 8px;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;transition:background .4s,color .4s}
-.quick button:hover{background:var(--champagne);color:var(--noir)}
-.quick button+button{border-left:1px solid var(--line-l)}
-.card-info{padding-top:18px;display:flex;justify-content:space-between;gap:12px}
-.card-info small{font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:var(--champagne-2)}
-.card-info h3{font-family:var(--serif);font-weight:400;font-size:1.28rem;line-height:1.2;margin-top:6px}
-.card-info .precio{font-family:var(--serif);font-size:1.08rem;white-space:nowrap;padding-top:20px}
+.tienda{background:var(--white)}
+.controles{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:30px}
+.segment{display:inline-flex;background:var(--tile);border-radius:980px;padding:3px;gap:2px;overflow-x:auto;max-width:100%;scrollbar-width:none}
+.segment button{padding:8px 16px;border-radius:980px;font-size:14px;color:var(--ink-2);white-space:nowrap;transition:background .25s,color .25s,box-shadow .25s}
+.segment button[aria-pressed="true"]{background:var(--white);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.busca{flex:1;min-width:200px;display:flex;align-items:center;gap:8px;background:var(--tile);border-radius:12px;padding:0 14px;height:40px}
+.busca svg{width:15px;height:15px;color:var(--mute)}
+.busca input{border:0;background:transparent;outline:none;width:100%;font-size:15px}
+.orden{height:40px;border-radius:12px;border:0;background:var(--tile);padding:0 14px;font-size:14px}
+.conteo{font-size:14px;color:var(--mute);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--tile);border-radius:var(--r);padding:28px 26px 26px;display:flex;flex-direction:column;cursor:pointer;transition:transform .5s var(--ease),box-shadow .5s var(--ease);outline-offset:4px}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .c-img{aspect-ratio:1/1;display:grid;place-items:center;margin:-4px -4px 14px}
+.card .c-img img{width:88%;height:88%;object-fit:contain;transition:transform .9s var(--ease);filter:drop-shadow(0 18px 22px rgba(0,0,0,.14))}
+.card:hover .c-img img{transform:scale(1.05)}
+.card .nuevo{font-size:12px;font-weight:600;color:var(--new);height:17px}
+.card h3{font-size:21px;font-weight:600;line-height:1.19;letter-spacing:.011em;margin-top:2px}
+.card .desc{font-size:14px;color:var(--mute);margin-top:6px;flex:1}
+.card .opciones{display:flex;gap:6px;margin-top:12px;min-height:14px}
+.card .opciones i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
+.card .pie{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px}
+.card .precio{font-size:15px;color:var(--ink)}
 .vacio{grid-column:1/-1;text-align:center;padding:80px 0;color:var(--mute)}
-.nota-demo{font-size:.72rem;color:var(--mute);margin-top:70px;text-align:center;letter-spacing:.04em}
+.nota{font-size:12px;color:var(--mute);margin-top:28px;line-height:1.5}
 
 /* =====================================================================
-   10. LA MAISON (editorial oscuro)
+   8. VENTAJAS (por qué comprar aquí)
    ===================================================================== */
-.maison{background:var(--noir);color:var(--ivory);overflow:hidden}
-.maison .kicker{color:var(--champagne)}
-.maison .display em{color:var(--champagne)}
-.maison-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
-.maison-img{position:relative;height:720px}
-.maison-img .ph{position:absolute;background:var(--noir-2);height:auto}
-.maison-img .m1{inset:0 18% 12% 0}
-.maison-img .m2{width:46%;height:46%;right:0;bottom:0;border:10px solid var(--noir)}
-.maison p{color:rgba(247,243,236,.72)}
-.cifras{display:grid;grid-template-columns:repeat(3,1fr);margin-top:60px;border-top:1px solid var(--line-l)}
-.cifras div{padding:28px 0}
-.cifras b{font-family:var(--serif);font-weight:400;font-size:2.8rem;color:var(--champagne);display:block;line-height:1}
-.cifras span{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;opacity:.7}
-.pilares{display:grid;grid-template-columns:repeat(4,1fr);margin-top:140px;border-top:1px solid var(--line-l)}
-.pilar{padding:44px 34px 10px 0;border-right:1px solid var(--line-l);margin-right:34px}
-.pilar:last-child{border:none;margin:0}
-.pilar i{font-style:normal;font-family:var(--serif);color:var(--champagne);font-size:.9rem}
-.pilar h4{font-family:var(--serif);font-weight:400;font-size:1.6rem;margin:14px 0 10px}
-.pilar p{font-size:.92rem}
+.ventajas{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.vent{background:var(--white);border-radius:var(--r);padding:30px 26px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.vent svg{width:36px;height:36px;color:var(--gold);margin-bottom:18px}
+.vent h3{font-size:19px;font-weight:600;line-height:1.25;margin-bottom:6px}
+.vent p{font-size:14px;color:var(--mute)}
 
 /* =====================================================================
-   11. TESTIMONIOS
+   9. HISTORIA (sección oscura)
    ===================================================================== */
-.opiniones{text-align:center}
-.slider{max-width:880px;margin:50px auto 0;position:relative;min-height:220px}
-.slide{position:absolute;inset:0;opacity:0;transform:translateY(16px);transition:opacity 1s var(--ease),transform 1s var(--ease);pointer-events:none}
-.slide.on{opacity:1;transform:none;pointer-events:auto}
-.slide p{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.3}
-.slide small{display:block;margin-top:26px;font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--mute)}
-.dots{display:flex;gap:12px;justify-content:center;margin-top:30px}
-.dots button{width:34px;height:2px;background:var(--line);transition:var(--t)}
-.dots button.on{background:var(--ink);width:60px}
-.sim{display:inline-block;margin-top:22px;font-size:.56rem;letter-spacing:.3em;color:var(--champagne-2);border:1px solid var(--champagne);padding:5px 10px}
+.historia{background:var(--dark);color:var(--on-dark);text-align:center;overflow:hidden}
+.historia .eyebrow{color:var(--gold-l)}
+.historia .h-1{max-width:16ch;margin:0 auto}
+.historia .body-l{color:var(--on-dark-2);max-width:680px;margin:24px auto 0}
+.historia-img{width:min(620px,86vw);margin:50px auto 0;aspect-ratio:1/1}
+.historia-img img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 40px 60px rgba(212,178,111,.18))}
+.datos{display:grid;grid-template-columns:repeat(3,1fr);max-width:820px;margin:20px auto 0;gap:24px}
+.datos b{display:block;font-size:clamp(40px,5vw,56px);font-weight:700;letter-spacing:-.01em;background:linear-gradient(180deg,#f1e0b6,#b08d4c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.datos span{font-size:14px;color:var(--on-dark-2)}
 
 /* =====================================================================
-   12. SERVICIOS
+   10. AYUDA (envíos, pagos, cambios) + PREGUNTAS
    ===================================================================== */
-.servicios{background:var(--ivory-2)}
-.serv-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:60px}
-.serv{padding:44px 34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .6s var(--ease)}
-.serv:hover{background:var(--ivory)}
-.serv svg{width:34px;height:34px;color:var(--champagne-2);margin-bottom:26px;stroke-width:1}
-.serv h3{font-family:var(--serif);font-weight:400;font-size:1.55rem;margin-bottom:14px}
-.serv li{list-style:none;font-size:.9rem;color:var(--mute);padding:7px 0;border-bottom:1px solid var(--line)}
-.serv li:last-child{border:none}
-.pc{color:var(--champagne-2);font-style:italic}
-.pagos{display:flex;gap:16px;flex-wrap:wrap;margin-top:50px;justify-content:center}
-.pago{display:flex;align-items:center;gap:12px;border:1px solid var(--line);padding:14px 22px;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;background:var(--ivory)}
-.pago svg{width:22px;height:22px;color:var(--champagne-2)}
-.faq{max-width:880px;margin:90px auto 0}
+.ayuda{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ay{background:var(--tile);border-radius:var(--r);padding:32px 28px}
+.ay h3{font-size:21px;font-weight:600;margin-bottom:12px}
+.ay li{list-style:none;font-size:15px;color:var(--ink-2);padding:9px 0;border-top:1px solid var(--line)}
+.pc{color:var(--mute);font-style:italic}
+.faq{max-width:820px;margin:70px auto 0}
 .faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;align-items:center;font-family:var(--serif);font-size:1.35rem}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;font-size:19px;font-weight:600;display:flex;justify-content:space-between;gap:20px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:var(--sans);font-weight:200;font-size:1.8rem;transition:transform .5s var(--ease)}
+.faq summary::after{content:"+";font-weight:300;font-size:26px;line-height:1;color:var(--mute);transition:transform .35s var(--ease)}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{padding:0 0 26px;color:var(--mute);max-width:680px}
+.faq p{padding:0 0 22px;color:var(--ink-2)}
 
 /* =====================================================================
-   13. CONTACTO
+   11. CONTACTO
    ===================================================================== */
-.contacto-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:100px}
-.datos{margin-top:46px}
-.dato{display:grid;grid-template-columns:140px 1fr;padding:20px 0;border-bottom:1px solid var(--line);font-size:.95rem}
-.dato>span:first-child{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);padding-top:4px}
-.form{display:grid;gap:34px;align-content:start;padding-top:10px}
+.contacto{background:var(--tile)}
+.contacto-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:28px}
+.c-card{background:var(--white);border-radius:var(--r-l);padding:44px}
+.c-card .h-3{margin-bottom:16px}
+.c-dato{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-size:15px}
+.c-dato span:first-child{color:var(--mute)}
+.form{display:grid;gap:14px}
 .campo{position:relative}
-.campo input,.campo textarea,.campo select{width:100%;border:none;border-bottom:1px solid var(--ink);background:transparent;padding:16px 0 10px;outline:none;font-size:1rem;border-radius:0}
-.campo label{position:absolute;left:0;top:16px;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mute);transition:.4s var(--ease);pointer-events:none}
-.campo input:focus+label,.campo input:not(:placeholder-shown)+label,.campo textarea:focus+label,.campo textarea:not(:placeholder-shown)+label{top:-10px;font-size:.56rem;color:var(--champagne-2)}
-.campo .err{font-size:.72rem;color:#9b2c2c;min-height:1em;display:block;margin-top:6px}
-.campo .mal{border-color:#9b2c2c}
-.fila2{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.campo input,.campo textarea,.campo select{width:100%;border:1px solid var(--line);border-radius:12px;background:var(--white);padding:24px 16px 8px;font-size:17px;outline:none;transition:border-color .2s,box-shadow .2s;resize:vertical}
+.campo select{padding:16px}
+.campo label{position:absolute;left:17px;top:17px;font-size:17px;color:var(--mute);pointer-events:none;transition:all .2s var(--ease)}
+.campo input:focus,.campo textarea:focus,.campo select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,113,227,.15)}
+.campo input:focus+label,.campo input:not(:placeholder-shown)+label,.campo textarea:focus+label,.campo textarea:not(:placeholder-shown)+label{top:8px;font-size:12px}
+.campo .err{display:block;font-size:12px;color:#d70015;margin:6px 4px 0;min-height:0}
+.campo .mal{border-color:#d70015}
+.fila2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 
 /* =====================================================================
-   14. FOOTER
+   12. PIE DE PÁGINA
    ===================================================================== */
-footer{background:var(--noir);color:rgba(247,243,236,.66);padding:120px 0 40px}
-.foot-logo{display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:80px;border-bottom:1px solid var(--line-l)}
-.foot-logo svg{width:90px;height:90px}
-.foot-logo .wm{font-family:var(--serif);color:var(--ivory);font-size:clamp(2.2rem,7vw,6rem);letter-spacing:.2em;line-height:1;margin-top:26px;padding-left:.2em}
-.foot-logo .sub{font-size:.58rem;letter-spacing:.6em;color:var(--champagne);margin-top:16px}
-.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;padding:60px 0}
-footer h5{font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--champagne);font-weight:400;margin-bottom:18px}
-footer li{list-style:none;padding:5px 0;font-size:.9rem}
-footer a:hover{color:var(--ivory)}
-.legal{border-top:1px solid var(--line-l);padding-top:30px;font-size:.72rem;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer{background:var(--tile);color:var(--mute);font-size:12px;line-height:1.5;padding:20px 0 26px}
+footer .legal-top{border-bottom:1px solid var(--line);padding:14px 0 18px}
+.foot-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+footer h4{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:8px}
+footer li{list-style:none;margin-bottom:8px}
+footer a{color:var(--ink-2)}
+.foot-fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:16px}
 
 /* =====================================================================
-   15. PANEL "MI SELECCIÓN"
+   13. HOJA DE PRODUCTO (modal)
    ===================================================================== */
-.velo{position:fixed;inset:0;background:rgba(14,12,11,.5);backdrop-filter:blur(3px);z-index:80;opacity:0;visibility:hidden;transition:var(--t)}
+.velo{position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:200;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
 .velo.on{opacity:1;visibility:visible}
-.panel{position:fixed;top:0;right:0;bottom:0;width:min(480px,100%);background:var(--ivory);z-index:90;transform:translateX(100%);transition:transform .8s var(--ease);display:flex;flex-direction:column}
-.panel.on{transform:none}
-.panel-h{display:flex;justify-content:space-between;align-items:center;padding:30px 34px;border-bottom:1px solid var(--line)}
-.panel-h h2{font-family:var(--serif);font-weight:400;font-size:1.9rem}
-.x{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:var(--t);flex:0 0 auto}
-.x:hover{background:var(--noir);color:var(--ivory);transform:rotate(90deg)}
-.items{flex:1;overflow-y:auto;padding:10px 34px}
-.item{display:grid;grid-template-columns:88px 1fr auto;gap:18px;padding:22px 0;border-bottom:1px solid var(--line);animation:entra .5s var(--ease) both}
-.item .ph{height:112px}
-.item small{font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--champagne-2)}
-.item h4{font-family:var(--serif);font-weight:400;font-size:1.12rem;line-height:1.2;margin:4px 0}
-.item .v{font-size:.8rem;color:var(--mute)}
-.item .der{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end}
-.qty{display:inline-flex;align-items:center;border:1px solid var(--line)}
-.qty button{width:32px;height:32px;transition:background .3s}
-.qty button:hover{background:var(--ivory-2)}
-.qty span{min-width:26px;text-align:center;font-size:.9rem}
-.quitar{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-top:8px;text-decoration:underline;text-underline-offset:4px}
-.vacio-p{text-align:center;padding:90px 10px;color:var(--mute)}
-.vacio-p p.display{font-size:1.8rem;color:var(--ink);margin-bottom:10px}
-.panel-f{padding:28px 34px;border-top:1px solid var(--line);background:var(--ivory-2)}
-.fila{display:flex;justify-content:space-between;font-size:.86rem;padding:4px 0}
-.fila.tot{font-family:var(--serif);font-size:1.6rem;padding:14px 0 6px}
-.nota{font-size:.74rem;color:var(--mute);margin-bottom:20px}
-.vaciar{display:block;margin:16px auto 0;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mute)}
+.hoja{position:fixed;inset:auto 0 0 0;margin:0 auto;width:min(1080px,100%);max-height:92vh;overflow:auto;background:var(--white);border-radius:var(--r-l) var(--r-l) 0 0;z-index:210;transform:translateY(102%);transition:transform .55s var(--ease);display:grid;grid-template-columns:1.1fr 1fr;box-shadow:0 -20px 60px rgba(0,0,0,.2)}
+.hoja.on{transform:none}
+@media (min-height:760px) and (min-width:900px){.hoja{inset:50% auto auto 50%;transform:translate(-50%,-46%) scale(.97);opacity:0;visibility:hidden;border-radius:var(--r-l);transition:transform .5s var(--ease),opacity .35s,visibility .35s}.hoja.on{transform:translate(-50%,-50%);opacity:1;visibility:visible}}
+.cerrar{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--tile);display:grid;place-items:center;z-index:3;transition:background .2s}
+.cerrar:hover{background:var(--tile-2)}
+.cerrar svg{width:12px;height:12px}
+.h-img{background:var(--tile);display:grid;place-items:center;padding:40px;position:relative;overflow:hidden;cursor:zoom-in;min-height:420px}
+.h-img img{width:100%;max-width:520px;aspect-ratio:1/1;object-fit:contain;transition:transform .35s ease-out;filter:drop-shadow(0 26px 30px rgba(0,0,0,.16))}
+.h-info{padding:52px 44px 40px;display:flex;flex-direction:column;gap:18px}
+.h-info .nuevo{font-size:14px;font-weight:600;color:var(--new)}
+.h-info h2{font-size:clamp(28px,3vw,40px);line-height:1.1;font-weight:700;letter-spacing:0}
+.h-precio{font-size:17px;color:var(--ink)}
+.h-desc{color:var(--ink-2)}
+.opt-t{font-size:17px;font-weight:600;margin-bottom:10px}
+.opt-t span{font-weight:400;color:var(--mute)}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{min-width:64px;padding:12px 18px;border:1px solid var(--line);border-radius:12px;font-size:15px;transition:border-color .2s,box-shadow .2s}
+.pill:hover{border-color:var(--mute)}
+.pill[aria-pressed="true"]{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
+.cant{display:flex;align-items:center;gap:14px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.qty button{width:40px;height:40px;font-size:18px;transition:background .2s}
+.qty button:hover{background:var(--tile)}
+.qty span{min-width:34px;text-align:center;font-size:15px}
+.entrega{border-top:1px solid var(--line);padding-top:16px;display:grid;gap:10px;font-size:14px;color:var(--ink-2)}
+.entrega div{display:flex;gap:10px;align-items:flex-start}
+.entrega svg{width:18px;height:18px;flex:0 0 auto;color:var(--ink);margin-top:1px}
+.ficha{border-top:1px solid var(--line)}
+.ficha summary{list-style:none;cursor:pointer;padding:16px 0;font-weight:600;display:flex;justify-content:space-between}
+.ficha summary::-webkit-details-marker{display:none}
+.ficha summary::after{content:"+";font-weight:300;font-size:22px;line-height:1;color:var(--mute)}
+.ficha[open] summary::after{content:"−"}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;padding-bottom:16px;font-size:14px}
+.ficha dt{color:var(--mute)}
 
 /* =====================================================================
-   16. FICHA DE PRODUCTO
+   14. BOLSA (panel lateral)
    ===================================================================== */
-.modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:3vh 3vw;visibility:hidden;opacity:0;transition:opacity .6s var(--ease),visibility .6s}
-.modal.on{visibility:visible;opacity:1}
-.modal-bg{position:absolute;inset:0;background:rgba(14,12,11,.72);backdrop-filter:blur(6px)}
-.modal-box{position:relative;background:var(--ivory);width:min(1180px,100%);max-height:94vh;overflow:auto;display:grid;grid-template-columns:1.05fr 1fr;transform:translateY(40px);transition:transform .9s var(--ease)}
-.modal.on .modal-box{transform:none}
-.modal-box>.x{position:absolute;top:20px;right:20px;z-index:4;background:var(--ivory)}
-.m-img{position:relative;min-height:640px;overflow:hidden}
-.m-img .ph{position:absolute;inset:0}
-.m-img .ph img{cursor:zoom-in;transition:transform .35s ease-out,opacity 1s}
-.m-info{padding:60px 54px;display:flex;flex-direction:column;gap:22px}
-.m-info h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.4vw,3rem);line-height:1.05}
-.m-precio{font-family:var(--serif);font-size:1.7rem}
-.m-precio small{font-family:var(--sans);font-size:.62rem;letter-spacing:.2em;color:var(--mute);margin-left:10px;text-transform:uppercase}
-.m-desc{color:var(--mute)}
-.ficha{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
-.ficha div{padding:14px 0;border-bottom:1px solid var(--line);font-size:.9rem}
-.ficha b{display:block;font-weight:400;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mute)}
-.opts-t{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
-.opts{display:flex;gap:8px;flex-wrap:wrap}
-.opt{padding:11px 18px;border:1px solid var(--line);font-size:.78rem;letter-spacing:.06em;transition:var(--t)}
-.opt:hover{border-color:var(--ink)}
-.opt.sel{background:var(--noir);color:var(--ivory);border-color:var(--noir)}
-.m-acc{display:flex;gap:12px;align-items:stretch}
-.m-acc .qty button{height:100%;width:44px}
-.m-acc .btn{flex:1}
-.resenas h5{font-family:var(--serif);font-weight:400;font-size:1.2rem;margin-bottom:6px;display:flex;align-items:center;gap:12px}
-.resenas h5 .sim{margin:0}
-.res{padding:12px 0;border-bottom:1px solid var(--line);font-size:.88rem}
-.res .est{color:var(--champagne-2);letter-spacing:2px;font-size:.8rem}
+.bolsa{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--white);z-index:220;transform:translateX(102%);transition:transform .55s var(--ease);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.15)}
+.bolsa.on{transform:none}
+.bolsa-h{padding:26px 28px 14px;display:flex;justify-content:space-between;align-items:center}
+.bolsa-h h2{font-size:28px;font-weight:700}
+.bolsa .cerrar{position:static}
+.items{flex:1;overflow:auto;padding:0 28px}
+.item{display:grid;grid-template-columns:84px 1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);animation:entra .45s var(--ease) both}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}}
+.item .ii{width:84px;height:84px;background:var(--tile);border-radius:12px;display:grid;place-items:center}
+.item img{width:72px;height:72px;object-fit:contain}
+.item h4{font-size:15px;font-weight:600;line-height:1.25}
+.item .v{font-size:13px;color:var(--mute);margin-top:2px}
+.item .quitar{font-size:13px;color:var(--link);margin-top:8px}
+.item .der{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;gap:10px;font-size:15px}
+.item .qty button{width:30px;height:30px;font-size:15px}
+.item .qty span{min-width:24px;font-size:13px}
+.bolsa-vacia{text-align:center;padding:80px 20px;color:var(--mute)}
+.bolsa-vacia svg{width:44px;height:44px;margin:0 auto 14px;color:var(--line)}
+.bolsa-f{padding:20px 28px 28px;border-top:1px solid var(--line);background:var(--bg)}
+.fila{display:flex;justify-content:space-between;font-size:15px;padding:4px 0;color:var(--ink-2)}
+.fila.tot{font-size:21px;font-weight:600;color:var(--ink);padding:10px 0 4px}
+.bolsa-f .nota{margin:6px 0 16px}
+.vaciar{display:block;margin:14px auto 0;font-size:13px;color:var(--link)}
 
 /* =====================================================================
-   17. NOTIFICACIONES
+   15. AVISO FLOTANTE (toast)
    ===================================================================== */
-.toasts{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);z-index:200;display:grid;gap:10px;width:min(420px,92%)}
-.toast{background:var(--noir);color:var(--ivory);padding:18px 22px;display:flex;gap:16px;align-items:center;font-size:.86rem;animation:tIn .6s var(--ease) both;border-left:2px solid var(--champagne)}
-.toast.out{animation:tOut .5s var(--ease) both}
-@keyframes tIn{from{opacity:0;transform:translateY(20px)}}
-@keyframes tOut{to{opacity:0;transform:translateY(20px)}}
+.toast{position:fixed;top:62px;left:50%;z-index:300;transform:translate(-50%,-20px);opacity:0;background:rgba(29,29,31,.92);backdrop-filter:blur(20px);color:#fff;border-radius:16px;padding:12px 16px 12px 12px;display:flex;align-items:center;gap:12px;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);transition:transform .45s var(--ease),opacity .3s;pointer-events:none;max-width:92vw}
+.toast.on{transform:translate(-50%,0);opacity:1}
+.toast img{width:40px;height:40px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}
+.toast b{font-weight:600;display:block}
 
 /* =====================================================================
-   18. CONCIERGE VIRTUAL
+   16. ASISTENTE (estilo mensajes)
    ===================================================================== */
-.fab{position:fixed;right:28px;bottom:28px;z-index:70;display:flex;align-items:center;gap:12px;background:var(--noir);color:var(--ivory);padding:10px 22px 10px 10px;border-radius:99px;box-shadow:0 20px 40px rgba(14,12,11,.35);font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;transition:transform var(--t)}
-.fab:hover{transform:translateY(-4px)}
-.av{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--champagne-3),var(--champagne-2));display:grid;place-items:center;position:relative;flex:0 0 auto}
-.av svg{width:26px;height:26px}
-.fab .av::after{content:"";position:absolute;right:0;bottom:0;width:10px;height:10px;border-radius:50%;background:#5fd38d;border:2px solid var(--noir)}
-.fab-wa{position:fixed;left:28px;bottom:28px;z-index:70;width:54px;height:54px;border-radius:50%;background:#1f8f4e;color:#fff;display:grid;place-items:center;box-shadow:0 16px 30px rgba(31,143,78,.35);transition:transform var(--t)}
-.fab-wa:hover{transform:scale(1.08)}
-.fab-wa svg{width:26px;height:26px}
-.chat{position:fixed;right:28px;bottom:100px;width:min(400px,calc(100% - 32px));height:min(620px,calc(100vh - 140px));background:var(--ivory);z-index:75;display:flex;flex-direction:column;box-shadow:0 40px 80px rgba(14,12,11,.3);transform-origin:bottom right;transform:translateY(20px) scale(.96);opacity:0;visibility:hidden;transition:var(--t)}
+.fab{position:fixed;right:22px;bottom:22px;z-index:150;display:flex;align-items:center;gap:10px;height:52px;padding:0 20px 0 8px;border-radius:26px;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(20px);box-shadow:0 8px 30px rgba(0,0,0,.14);font-size:14px;font-weight:500;transition:transform .35s var(--ease)}
+.fab:hover{transform:translateY(-3px)}
+.av{width:38px;height:38px;border-radius:50%;background:linear-gradient(145deg,#f1e0b6,#b08d4c);display:grid;place-items:center;color:#1d1d1f;font-family:var(--serif);font-style:italic;font-size:18px;position:relative;flex:0 0 auto}
+.fab .av::after{content:"";position:absolute;right:0;bottom:0;width:10px;height:10px;border-radius:50%;background:#30d158;border:2px solid #fff}
+.chat{position:fixed;right:22px;bottom:86px;width:min(380px,calc(100% - 28px));height:min(580px,calc(100vh - 120px));background:var(--white);border-radius:var(--r-l);z-index:160;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.25);transform-origin:bottom right;transform:scale(.92) translateY(10px);opacity:0;visibility:hidden;transition:transform .4s var(--ease),opacity .25s,visibility .25s}
 .chat.on{transform:none;opacity:1;visibility:visible}
-.chat-h{background:var(--noir);color:var(--ivory);padding:22px 24px;display:flex;align-items:center;gap:14px}
-.chat-h .av{width:44px;height:44px}
-.chat-h h4{font-family:var(--serif);font-weight:400;font-size:1.25rem}
-.chat-h small{font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--champagne)}
-.chat-h .x{margin-left:auto;border-color:var(--line-l);width:38px;height:38px}
-.msgs{flex:1;overflow-y:auto;padding:22px;display:flex;flex-direction:column;gap:14px}
-.msg{max-width:86%;padding:14px 16px;font-size:.88rem;line-height:1.55;animation:entra .5s var(--ease) both;white-space:pre-line}
-.msg.bot{background:var(--ivory-2);border-left:2px solid var(--champagne)}
-.msg.yo{background:var(--noir);color:var(--ivory);align-self:flex-end}
-.msg a{color:var(--champagne-2);text-decoration:underline}
-.typing{display:flex;gap:5px}
-.typing i{width:6px;height:6px;border-radius:50%;background:var(--champagne-2);animation:rb 1.2s infinite}
+.chat-h{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.chat-h b{display:block;font-size:15px}
+.chat-h small{font-size:12px;color:var(--mute)}
+.chat-h .cerrar{position:static;margin-left:auto}
+.msgs{flex:1;overflow:auto;padding:18px;display:flex;flex-direction:column;gap:8px;background:var(--white)}
+.msg{max-width:80%;padding:9px 14px;border-radius:19px;font-size:15px;line-height:1.35;white-space:pre-line;animation:entra .35s var(--ease) both}
+.msg.bot{background:#e9e9eb;align-self:flex-start;border-bottom-left-radius:6px}
+.msg.yo{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:6px}
+.msg a{color:var(--link);text-decoration:underline}
+.typing{display:flex;gap:4px;padding:13px 14px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#8e8e93;animation:tp 1.2s infinite}
 .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
-@keyframes rb{30%{transform:translateY(-5px);opacity:.5}}
-.sugs{display:flex;gap:8px;overflow-x:auto;padding:12px 18px;border-top:1px solid var(--line);scrollbar-width:none}
-.sug{flex:0 0 auto;padding:8px 14px;border:1px solid var(--line);font-size:.68rem;letter-spacing:.12em;transition:var(--t)}
-.sug:hover{background:var(--noir);color:var(--ivory)}
-.chat-f{display:flex;border-top:1px solid var(--line)}
-.chat-f input{flex:1;border:none;background:transparent;padding:18px 20px;outline:none}
-.chat-f button{width:64px;background:var(--noir);color:var(--champagne);font-size:1.1rem}
+@keyframes tp{30%{transform:translateY(-4px);opacity:.5}}
+.sugs{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;scrollbar-width:none;border-top:1px solid var(--line)}
+.sug{flex:0 0 auto;padding:7px 13px;border-radius:980px;border:1px solid var(--line);font-size:13px;color:var(--link)}
+.sug:hover{background:var(--tile)}
+.chat-f{display:flex;gap:8px;padding:10px 12px 14px}
+.chat-f input{flex:1;border:1px solid var(--line);border-radius:980px;padding:9px 16px;outline:none;font-size:15px}
+.chat-f input:focus{border-color:var(--blue)}
+.chat-f button{width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center}
+.chat-f button svg{width:16px;height:16px}
 
-/* Revelado al hacer scroll */
-.rv{opacity:0;transform:translateY(50px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+/* Aparición suave al hacer scroll */
+.rv{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .rv.in{opacity:1;transform:none}
-.rv-d1{transition-delay:.12s}.rv-d2{transition-delay:.24s}.rv-d3{transition-delay:.36s}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
 
 /* =====================================================================
-   19. RESPONSIVE
+   17. RESPONSIVE
    ===================================================================== */
-@media (max-width:1100px){
-  .grid{grid-template-columns:repeat(3,1fr)}
-  .serv-grid,.pilares{grid-template-columns:repeat(2,1fr)}
-  .pilar:nth-child(2){border:none;margin:0}
-  .maison-grid,.contacto-grid{gap:60px}
+@media (max-width:1068px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .ventajas{grid-template-columns:repeat(2,1fr)}
 }
-@media (max-width:900px){
-  section{padding:100px 0}
-  .nav{grid-template-columns:1fr auto;height:76px}
-  .marca{align-items:flex-start;order:-1}
-  .marca svg{display:none}
-  .marca .wm{padding-left:0;font-size:1rem}
-  .marca .sub{padding-left:0}
-  .menu{position:fixed;inset:0;background:var(--noir);color:var(--ivory);flex-direction:column;justify-content:center;align-items:center;gap:30px;font-size:1rem;opacity:0;visibility:hidden;transition:var(--t);z-index:-1}
-  .menu.on{opacity:1;visibility:visible}
-  .burger{display:flex!important}
-  .acc .txt{display:none}
-  .cats{grid-template-columns:1fr 1fr;grid-template-rows:420px 260px 260px}
-  .cat:first-child{grid-column:span 2;grid-row:auto}
-  .grid{grid-template-columns:repeat(2,1fr);gap:40px 16px}
-  .maison-grid,.contacto-grid,.modal-box{grid-template-columns:1fr}
-  .maison-img{height:520px}
-  .m-img{min-height:420px}
-  .m-info{padding:36px 26px}
-  .foot-grid{grid-template-columns:1fr 1fr}
-  .quick{transform:none;position:static}
-  .filtros .der{margin-left:0;width:100%}
-  .buscar{flex:1}.buscar input{width:100%}
-  .scroll-ind{display:none}
+@media (max-width:834px){
+  .gnav ul{position:fixed;top:48px;left:0;right:0;flex-direction:column;gap:0;background:rgba(251,251,253,.97);backdrop-filter:blur(20px);padding:10px 8% 30px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:all .35s var(--ease);border-bottom:1px solid var(--line)}
+  .gnav ul.on{transform:none;opacity:1;visibility:visible}
+  .gnav ul a{display:block;font-size:24px;font-weight:600;padding:10px 0;opacity:1}
+  .burger{display:grid}
+  .tiles{grid-template-columns:1fr}
+  .tile{min-height:520px}
+  .ayuda,.contacto-grid{grid-template-columns:1fr}
+  .hoja{grid-template-columns:1fr}
+  .h-img{min-height:300px;padding:24px}
+  .h-info{padding:28px 24px 34px}
+  .foot-cols{grid-template-columns:1fr 1fr}
 }
-@media (max-width:560px){
-  .cats{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:300px}
-  .cat:first-child{grid-column:auto}
-  .serv-grid,.pilares,.cifras,.fila2,.ficha{grid-template-columns:1fr}
-  .pilar{border-right:none;margin:0;border-bottom:1px solid var(--line-l)}
-  .card-info{flex-direction:column;gap:0}.card-info .precio{padding-top:4px}
-  .card-info h3{font-size:1.05rem}
-  .quick button{font-size:.5rem;letter-spacing:.16em;padding:12px 4px}
-  .fab .lbl{display:none}.fab{padding:8px}
-  .dato{grid-template-columns:1fr}
-  .hero h1{font-size:3.2rem}
-  .aviso{font-size:.58rem}
+@media (max-width:600px){
+  body{font-size:16px}
+  .grid{grid-template-columns:1fr 1fr;gap:12px}
+  .card{padding:16px 14px}
+  .card h3{font-size:16px}
+  .card .desc{display:none}
+  .card .pie{flex-direction:column;align-items:flex-start}
+  .card .pie .btn{width:100%}
+  .ventajas,.datos{grid-template-columns:1fr}
+  .fila2{grid-template-columns:1fr}
+  .c-card{padding:30px 22px}
+  .fab .lbl{display:none}.fab{padding:0 7px}
+  .seccion{padding:72px 0}
 }
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rv{opacity:1;transform:none}
-  .hero h1 .l>span{transform:none}
-  .hero-pie{opacity:1;transform:none}
 }
 </style>
 </head>
-<body class="bloqueado">
+<body>
 
-<!-- ===================== LOGOS (símbolos SVG reutilizables) ===================== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <linearGradient id="oro" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f1e0b6"/><stop offset=".45" stop-color="#c8a96a"/><stop offset="1" stop-color="#8f6f36"/>
-    </linearGradient>
-    <!-- Monograma principal: E&B dentro de un doble anillo con destello -->
-    <symbol id="logo" viewBox="0 0 120 120">
-      <circle cx="60" cy="60" r="56" fill="none" stroke="url(#oro)" stroke-width="1.2"/>
-      <circle cx="60" cy="60" r="50" fill="none" stroke="url(#oro)" stroke-width=".6" stroke-dasharray="1 3"/>
-      <text x="60" y="72" text-anchor="middle" font-family="Bodoni Moda, Didot, Georgia, serif" font-size="38" fill="url(#oro)" letter-spacing="-1">E<tspan font-style="italic" font-size="24" dy="-3">&amp;</tspan><tspan dy="3">B</tspan></text>
-      <path d="M60 12 l1.8 5.2 5.2 1.8 -5.2 1.8 -1.8 5.2 -1.8 -5.2 -5.2 -1.8 5.2 -1.8z" fill="url(#oro)"/>
-      <text x="60" y="97" text-anchor="middle" font-family="Jost, Arial, sans-serif" font-size="5.5" letter-spacing="3" fill="url(#oro)">MMXXVI</text>
-    </symbol>
-    <!-- Sub-marcas de cada línea -->
-    <symbol id="sm-parfum" viewBox="0 0 48 48"><rect x="15" y="16" width="18" height="26" rx="3" fill="none" stroke="currentColor"/><rect x="20" y="9" width="8" height="7" fill="none" stroke="currentColor"/><path d="M19 30h10" stroke="currentColor"/></symbol>
-    <symbol id="sm-atelier" viewBox="0 0 48 48"><path d="M24 8l12 12-12 20L12 20z" fill="none" stroke="currentColor"/><path d="M12 20h24M24 8l-5 12 5 20 5-20z" fill="none" stroke="currentColor" stroke-width=".7"/></symbol>
-    <symbol id="sm-bijou" viewBox="0 0 48 48"><circle cx="24" cy="26" r="12" fill="none" stroke="currentColor"/><circle cx="24" cy="26" r="6" fill="none" stroke="currentColor" stroke-width=".7"/><path d="M24 8v6" stroke="currentColor"/></symbol>
-    <symbol id="sm-acc" viewBox="0 0 48 48"><rect x="10" y="18" width="28" height="22" rx="2" fill="none" stroke="currentColor"/><path d="M17 18c0-8 14-8 14 0" fill="none" stroke="currentColor"/></symbol>
-    <symbol id="sm-gift" viewBox="0 0 48 48"><rect x="10" y="20" width="28" height="20" fill="none" stroke="currentColor"/><path d="M8 14h32v6H8zM24 14v26M24 14c-4-8-12-6-8 0M24 14c4-8 12-6 8 0" fill="none" stroke="currentColor"/></symbol>
-    <symbol id="concierge" viewBox="0 0 40 40"><text x="20" y="27" text-anchor="middle" font-family="Bodoni Moda, Georgia, serif" font-style="italic" font-size="20" fill="#0e0c0b">B</text></symbol>
-  </defs>
-</svg>
+<!-- Logo (símbolo reutilizable) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="oro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1e0b6"/><stop offset=".5" stop-color="#c49a52"/><stop offset="1" stop-color="#8f6f36"/></linearGradient>
+<symbol id="logo" viewBox="0 0 120 120"><circle cx="60" cy="60" r="56" fill="none" stroke="url(#oro)" stroke-width="3"/><text x="60" y="73" text-anchor="middle" font-family="Bodoni Moda, Didot, Georgia, serif" font-size="40" fill="url(#oro)">E&amp;B</text><path d="M60 13 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" fill="url(#oro)"/></symbol>
+<symbol id="i-bolsa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M5 8.5h14l-1 11.5H6L5 8.5Z"/><path fill="none" stroke="currentColor" stroke-width="1.5" d="M8.5 8.5V7a3.5 3.5 0 0 1 7 0v1.5"/></symbol>
+<symbol id="i-busca" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="i-x" viewBox="0 0 12 12"><path d="M1 1l10 10M11 1 1 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="i-camion" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M2.5 6.5h11v10h-11zM13.5 10h4l3 3.5v3h-7z"/><circle cx="7" cy="17.5" r="1.8" fill="#fff" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="17.5" r="1.8" fill="#fff" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="i-pago" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 9.5h19M6 15h4" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 18.5 5 15A8 8 0 1 1 8.5 18.8Z"/></symbol>
+<symbol id="i-regalo" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13M12 7c-2-4-6-3-4 0M12 7c2-4 6-3 4 0"/></symbol>
+<symbol id="i-cambio" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M5 9a7.5 7.5 0 0 1 13-2.5M19 15a7.5 7.5 0 0 1-13 2.5M18 3v4h-4M6 21v-4h4"/></symbol>
+<symbol id="i-enviar" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
 
-<!-- Pantalla de entrada -->
-<div class="intro" id="intro" aria-hidden="true">
-  <svg viewBox="0 0 120 120">
-    <circle class="trazo" cx="60" cy="60" r="57" fill="none" stroke="url(#oro)" stroke-width=".8"/>
-    <g class="mono"><use href="#logo"/></g>
-  </svg>
-  <p>ESENCIA &amp; BRILLO · MAISON</p>
-</div>
+<a class="sr-only" href="#tienda">Saltar a la tienda</a>
 
-<div class="cursor" id="cursor"><span>VER</span></div>
-
-<!-- ============================ ENCABEZADO ============================ -->
-<div class="aviso" aria-label="Avisos"><div class="aviso-track" id="aviso-track"></div></div>
-
-<header class="header" id="header">
-  <nav class="nav wrap" aria-label="Principal">
-    <ul class="menu" id="menu">
-      <li><a href="#tienda">Colección</a></li>
-      <li><a href="#maison">La Maison</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+<!-- ============================ NAVEGACIÓN ============================ -->
+<nav class="gnav" aria-label="Principal">
+  <div class="wrap-l">
+    <a href="#inicio" class="logo" aria-label="Esencia & Brillo, inicio"><svg aria-hidden="true"><use href="#logo"/></svg><span>ESENCIA &amp; BRILLO</span></a>
+    <ul id="menu">
+      <li><a href="#tienda" data-linea="fragancias">Fragancias</a></li>
+      <li><a href="#tienda" data-linea="joyeria">Joyería</a></li>
+      <li><a href="#tienda" data-linea="bisuteria">Bisutería</a></li>
+      <li><a href="#tienda" data-linea="accesorios">Accesorios</a></li>
+      <li><a href="#tienda" data-linea="regalos">Regalos</a></li>
+      <li><a href="#ayuda">Ayuda</a></li>
     </ul>
-    <a href="#inicio" class="marca" aria-label="Esencia & Brillo, inicio">
-      <svg aria-hidden="true"><use href="#logo"/></svg>
-      <span class="wm">ESENCIA &amp; BRILLO</span>
-      <span class="sub">SAN PEDRO SULA</span>
-    </a>
-    <div class="acc">
-      <button data-concierge class="txt" aria-label="Abrir concierge">Concierge</button>
-      <button data-abrir-panel aria-label="Abrir mi selección">
-        <span class="txt">Selección</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-        <span class="badge-n" id="badge">0</span>
-      </button>
-      <button class="burger" id="burger" aria-label="Menú" aria-expanded="false" aria-controls="menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M3 8h18M3 16h18"/></svg>
-      </button>
+    <div class="gnav-acc">
+      <a href="#tienda" class="ico-btn" aria-label="Buscar en la tienda" id="ir-buscar"><svg><use href="#i-busca"/></svg></a>
+      <button class="ico-btn" data-abrir-bolsa aria-label="Abrir bolsa"><svg><use href="#i-bolsa"/></svg><span class="bolsa-n" id="bolsa-n">0</span></button>
+      <button class="ico-btn burger" id="burger" aria-label="Menú" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24"><path d="M4 9h16M4 15h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
     </div>
-  </nav>
-</header>
+  </div>
+</nav>
+<p class="ribbon">Entrega a domicilio en San Pedro Sula y envíos a todo Honduras. <a href="#" data-wa-general class="chev">Habla con una asesora</a></p>
 
 <main>
-<!-- ============================== HERO ============================== -->
+<!-- ============================== PORTADA ============================== -->
 <section class="hero" id="inicio">
-  <div class="ph" data-src="photo-1590399830582-0bd885dee8e2" data-w="2000" data-alt="Mujer con lentes de sol y joyería dorada"></div>
-  <div class="hero-in wrap">
-    <span class="kicker" style="color:var(--champagne-3)">Colección Maison · MMXXVI</span>
-    <h1 class="display" style="margin-top:22px"><span class="l"><span>El arte de</span></span><span class="l"><span><em>brillar</em> con esencia</span></span></h1>
-    <div class="hero-pie">
-      <p>Fragancias, joyería de acero inoxidable, bisutería y accesorios seleccionados para la mujer hondureña. Calidad accesible, atención personalizada y entrega a domicilio.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="#tienda" class="btn btn-claro">Descubrir la colección <span class="fl">→</span></a>
-        <a href="#" class="btn btn-linea" data-wa-general>Asesoría privada</a>
-      </div>
+  <div class="wrap">
+    <p class="eyebrow rv">Colección 2026</p>
+    <h1 class="h-hero rv d1">Tu esencia.<br>Tu brillo.</h1>
+    <p class="sub rv d2">Fragancias y joyería que te acompañan todos los días.</p>
+    <div class="ctas rv d3">
+      <a href="#tienda" class="btn btn-primario">Comprar</a>
+      <a href="#historia" class="link-cta chev">Conoce la Maison</a>
     </div>
   </div>
-  <div class="scroll-ind">DESLIZA</div>
-</section>
-
-<!-- ========================= SUB-MARCAS ========================= -->
-<div class="marquee" aria-label="Líneas de la marca"><div class="marquee-track" id="marquee"></div></div>
-
-<!-- ============================ MANIFIESTO ============================ -->
-<section class="manifiesto">
-  <div class="wrap">
-    <span class="kicker rv">Nuestra filosofía</span>
-    <p class="display rv rv-d1">Creemos que el <em>lujo</em> está en los detalles: un aroma que se recuerda, un brillo que acompaña, un regalo que <em>emociona</em>.</p>
-    <div class="firma rv rv-d2">Esencia &amp; Brillo</div>
+  <div class="hero-img" id="hero-img">
+    <div class="hero-glow"></div>
+    <img data-foto="perfume-ambar" data-sizes="(max-width: 734px) 90vw, 760px" alt="Frasco de perfume de cristal tallado" fetchpriority="high" width="760" height="760">
   </div>
+  <div class="hero-tags rv"><span>Entrega a domicilio</span><span>Pago contra entrega</span><span>Asesoría personal</span></div>
 </section>
 
-<!-- =========================== CATEGORÍAS =========================== -->
-<section style="padding-top:0">
-  <div class="wrap"><div class="cats" id="cats"></div></div>
+<!-- ============================== LÍNEAS ============================== -->
+<section class="tiles" aria-label="Líneas de producto">
+  <article class="tile full dark rv">
+    <p class="marca-serif">Maison Parfum</p>
+    <h2 class="h-1">Fragancias</h2>
+    <p class="sub muted">Notas que se recuerdan.</p>
+    <div class="ctas"><a href="#tienda" class="btn btn-primario" data-linea="fragancias">Comprar</a><a href="#" class="link-cta chev" data-ver="noir-intense">Ver Noir Intense</a></div>
+    <div class="tile-img"><img data-foto="perfume-noir" data-sizes="(max-width: 834px) 80vw, 540px" alt="Frasco de perfume de cristal con tapa negra" loading="lazy" width="540" height="540"></div>
+  </article>
+  <article class="tile rv">
+    <p class="marca-serif">Atelier Brillo</p>
+    <h2 class="h-2">Joyería</h2>
+    <p class="sub muted">Acero inoxidable y baño de oro.</p>
+    <div class="ctas"><a href="#tienda" class="btn btn-primario" data-linea="joyeria">Comprar</a><a href="#" class="link-cta chev" data-ver="coeur-or">Ver collar</a></div>
+    <div class="tile-img"><img data-foto="collar-corazon" data-sizes="(max-width: 834px) 80vw, 440px" alt="Collar dorado con dije de corazón" loading="lazy" width="440" height="440"></div>
+  </article>
+  <article class="tile dark rv d1">
+    <p class="marca-serif">E&amp;B Accessoires</p>
+    <h2 class="h-2">Accesorios</h2>
+    <p class="sub muted">Lentes, bolsos y el toque final.</p>
+    <div class="ctas"><a href="#tienda" class="btn btn-primario" data-linea="accesorios">Comprar</a><a href="#" class="link-cta chev" data-ver="lentes-riviera">Ver lentes</a></div>
+    <div class="tile-img"><img data-foto="lentes" data-sizes="(max-width: 834px) 80vw, 440px" alt="Lentes de sol con montura dorada redonda" loading="lazy" width="440" height="440"></div>
+  </article>
+  <article class="tile rv">
+    <p class="marca-serif">Bijou E&amp;B</p>
+    <h2 class="h-2">Bisutería</h2>
+    <p class="sub muted">Moda accesible, todos los días.</p>
+    <div class="ctas"><a href="#tienda" class="btn btn-primario" data-linea="bisuteria">Comprar</a><a href="#" class="link-cta chev" data-ver="aretes-lumiere">Ver aretes</a></div>
+    <div class="tile-img"><img data-foto="aretes" data-sizes="(max-width: 834px) 80vw, 440px" alt="Aretes dorados de nudo" loading="lazy" width="440" height="440"></div>
+  </article>
+  <article class="tile rv d1" style="background:linear-gradient(180deg,#f7efe2,#efe2cc)">
+    <p class="marca-serif">Le Cadeau</p>
+    <h2 class="h-2">Regalos</h2>
+    <p class="sub muted">Listos para sorprender.</p>
+    <div class="ctas"><a href="#tienda" class="btn btn-primario" data-linea="regalos">Comprar</a><a href="#" class="link-cta chev" data-ver="coffret-maison">Ver coffret</a></div>
+    <div class="tile-img"><img data-foto="caja-regalo" data-sizes="(max-width: 834px) 80vw, 440px" alt="Cajas de regalo con lazo dorado" loading="lazy" width="440" height="440"></div>
+  </article>
 </section>
 
-<!-- ============================= TIENDA ============================= -->
-<section class="tienda" id="tienda">
+<!-- =============================== TIENDA =============================== -->
+<section class="tienda seccion" id="tienda">
   <div class="wrap">
-    <div class="tienda-top">
-      <div>
-        <span class="kicker rv">La colección</span>
-        <h2 class="display h2 rv rv-d1" style="margin-top:16px">Piezas para <em>cada</em> momento</h2>
-      </div>
-      <p class="lead rv rv-d2">Explora por línea, busca por nombre y abre cada pieza para ver su ficha, elegir tono o talla y añadirla a tu selección.</p>
+    <div class="seccion-head">
+      <div><h2 class="h-1 rv">Tienda.</h2><p class="sub muted rv d1">La mejor forma de elegir lo que te encanta.</p></div>
+      <a href="#" class="link-cta chev rv d2" data-wa-general>¿Necesitas ayuda? Escríbenos</a>
     </div>
+    <div class="cat-scroll rv" id="cats" aria-label="Categorías"></div>
 
-    <div class="filtros" role="search">
-      <div id="chips" style="display:flex;gap:6px;flex-wrap:wrap" role="tablist" aria-label="Líneas"></div>
-      <div class="der">
-        <label class="buscar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-          <span class="sr-only">Buscar</span><input id="q" type="search" placeholder="Buscar pieza…" autocomplete="off"></label>
-        <label><span class="sr-only">Ordenar</span>
-          <select id="orden" class="sel-orden"><option value="">Destacados</option><option value="asc">Precio ↑</option><option value="desc">Precio ↓</option><option value="az">A – Z</option></select></label>
-      </div>
+    <div class="controles" role="search">
+      <div class="segment" id="segment" role="group" aria-label="Filtrar por línea"></div>
+      <label class="busca"><svg><use href="#i-busca"/></svg><span class="sr-only">Buscar</span><input id="q" type="search" placeholder="Buscar en la tienda" autocomplete="off"></label>
+      <label><span class="sr-only">Ordenar</span><select id="orden" class="orden"><option value="">Destacados</option><option value="asc">Precio: menor a mayor</option><option value="desc">Precio: mayor a menor</option><option value="az">Nombre</option></select></label>
     </div>
     <p class="conteo" id="conteo" aria-live="polite"></p>
     <div class="grid" id="grid"></div>
-    <p class="nota-demo">Simulación académica · Precios referenciales de ejemplo en lempiras · Fotografías ilustrativas de Unsplash y Pexels.</p>
+    <p class="nota">Precios en lempiras (HNL), referenciales; la disponibilidad, el costo de envío y la forma de pago se confirman por WhatsApp antes de cada compra. Fotografías ilustrativas.</p>
   </div>
 </section>
 
-<!-- ============================== MAISON ============================== -->
-<section class="maison" id="maison">
+<!-- ============================== VENTAJAS ============================== -->
+<section class="seccion" style="background:var(--tile)">
   <div class="wrap">
-    <div class="maison-grid">
-      <div class="maison-img rv">
-        <div class="ph m1" data-src="photo-1586878341340-1971696a9b71" data-w="1200" data-alt="Bandeja de madera con joyas doradas"></div>
-        <div class="ph m2" data-src="photo-1586878340506-af074f2ee999" data-w="800" data-alt="Brazaletes y collar dorados en bandeja"></div>
-      </div>
-      <div>
-        <span class="kicker rv">La Maison</span>
-        <h2 class="display h2 rv rv-d1" style="margin:18px 0 30px">Nacida en <em>familia</em>, hecha para brillar</h2>
-        <p class="rv rv-d2">Esencia &amp; Brillo comenzó compartiendo lociones y perfumes con personas cercanas. Con los años, la casa amplió su universo a joyería de acero inoxidable, bisutería, relojes, bolsos y accesorios para mujer.</p>
-        <p class="rv rv-d2" style="margin-top:18px">Hoy atendemos desde San Pedro Sula, con entregas en la ciudad y envíos a otras ciudades del país, guiadas por una promesa sencilla: productos de calidad a precios accesibles, con un trato cercano y personal.</p>
-        <div class="cifras rv rv-d3">
-          <div><b>5</b><span>Líneas</span></div>
-          <div><b>18–55</b><span>Para ella</span></div>
-          <div><b>HN</b><span>Envíos al país</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="pilares">
-      <div class="pilar rv"><i>I.</i><h4>Selección curada</h4><p>Piezas elegidas una a una por su calidad, diseño y precio justo.</p></div>
-      <div class="pilar rv rv-d1"><i>II.</i><h4>Atención privada</h4><p>Asesoría personal por WhatsApp para elegir o armar un regalo.</p></div>
-      <div class="pilar rv rv-d2"><i>III.</i><h4>Transparencia</h4><p>Fotografías, precios visibles y condiciones claras antes de comprar.</p></div>
-      <div class="pilar rv rv-d3"><i>IV.</i><h4>Entrega cercana</h4><p>A domicilio en San Pedro Sula y envíos a otras ciudades.</p></div>
+    <h2 class="h-1 rv" style="margin-bottom:36px">La diferencia Esencia &amp; Brillo.</h2>
+    <div class="ventajas">
+      <div class="vent rv"><svg><use href="#i-camion"/></svg><h3>Entrega a domicilio</h3><p>En San Pedro Sula y envíos a otras ciudades del país.</p></div>
+      <div class="vent rv d1"><svg><use href="#i-pago"/></svg><h3>Pagas como prefieras</h3><p>Transferencia bancaria o pago contra entrega.</p></div>
+      <div class="vent rv d2"><svg><use href="#i-chat"/></svg><h3>Asesoría personal</h3><p>Una asesora te ayuda por WhatsApp a elegir.</p></div>
+      <div class="vent rv d3"><svg><use href="#i-regalo"/></svg><h3>Regalos listos</h3><p>Empaque especial y kits para cada ocasión.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============================= OPINIONES ============================= -->
-<section class="opiniones">
+<!-- ============================== HISTORIA ============================== -->
+<section class="historia seccion" id="historia">
   <div class="wrap">
-    <span class="kicker rv">Voces de la Maison</span>
-    <div class="slider" id="slider"></div>
-    <div class="dots" id="dots"></div>
-    <span class="sim">TESTIMONIOS SIMULADOS PARA EL PROTOTIPO</span>
+    <p class="eyebrow rv">La Maison</p>
+    <h2 class="h-1 rv d1">Nació en familia. Creció para brillar.</h2>
+    <p class="body-l rv d2">Esencia &amp; Brillo empezó compartiendo lociones y perfumes con personas cercanas. Hoy reúne fragancias, joyería de acero inoxidable, bisutería, relojes, bolsos y regalos, con una promesa sencilla: calidad a precios accesibles y un trato cercano.</p>
+    <div class="historia-img rv"><img data-foto="anillo" data-sizes="(max-width: 734px) 86vw, 620px" alt="Anillo dorado con piedras color miel" loading="lazy" width="620" height="620"></div>
+    <div class="datos rv"><div><b>5</b><span>líneas de producto</span></div><div><b>SPS</b><span>entrega a domicilio</span></div><div><b>HN</b><span>envíos a todo el país</span></div></div>
   </div>
 </section>
 
-<!-- ============================= SERVICIOS ============================= -->
-<section class="servicios" id="servicios">
+<!-- =============================== AYUDA =============================== -->
+<section class="seccion" id="ayuda">
   <div class="wrap">
-    <span class="kicker rv">Servicios</span>
-    <h2 class="display h2 rv rv-d1" style="margin-top:16px">Envíos, pagos <em>&amp;</em> cambios</h2>
-    <div class="serv-grid">
-      <article class="serv rv"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor"><path d="M3 9h16v13H3zM19 13h6l4 5v4h-10z"/><circle cx="9" cy="24" r="2.5"/><circle cx="24" cy="24" r="2.5"/></svg>
-        <h3>Entregas</h3><ul><li>A domicilio en San Pedro Sula</li><li>Envíos a otras ciudades del país</li><li>Costo: <span class="pc">por confirmar</span></li></ul></article>
-      <article class="serv rv rv-d1"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor"><circle cx="16" cy="16" r="12"/><path d="M16 9v7l5 3"/></svg>
-        <h3>Tiempos</h3><ul><li>San Pedro Sula: <span class="pc">por confirmar</span></li><li>Otras ciudades: <span class="pc">por confirmar</span></li><li>Confirmación al recibir tu pedido</li></ul></article>
-      <article class="serv rv rv-d2"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor"><rect x="3" y="7" width="26" height="18" rx="2"/><path d="M3 12h26M8 20h6"/></svg>
-        <h3>Pagos</h3><ul><li>Transferencia bancaria</li><li>Pago contra entrega</li><li>Sin cobro en línea en esta tienda</li></ul></article>
-      <article class="serv rv rv-d3"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor"><path d="M6 12a10 10 0 0 1 18-3M26 20a10 10 0 0 1-18 3"/><path d="M24 4v5h-5M8 28v-5h5"/></svg>
-        <h3>Cambios</h3><ul><li>Condiciones: <span class="pc">por confirmar</span></li><li>Consulta antes de comprar</li><li>Ley de Protección al Consumidor (Decreto 24-2008)</li></ul></article>
-    </div>
-    <div class="pagos rv">
-      <span class="pago"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 10 12 4l9 6M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/></svg>Transferencia bancaria</span>
-      <span class="pago"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="6" width="18" height="12" rx="1"/><circle cx="12" cy="12" r="3"/></svg>Pago contra entrega</span>
-      <span class="pago"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>Pedido por WhatsApp</span>
+    <h2 class="h-1 rv" style="margin-bottom:36px">Ayuda.</h2>
+    <div class="ayuda">
+      <div class="ay rv"><h3>Entregas</h3><ul><li>A domicilio en San Pedro Sula</li><li>Envíos a otras ciudades</li><li>Costo y tiempo: <span class="pc">se confirman en tu pedido</span></li></ul></div>
+      <div class="ay rv d1"><h3>Pagos</h3><ul><li>Transferencia bancaria</li><li>Pago contra entrega</li><li>Sin cobros en línea en este sitio</li></ul></div>
+      <div class="ay rv d2"><h3>Cambios</h3><ul><li>Consulta las condiciones antes de comprar</li><li>Te ayudamos por WhatsApp</li><li>Ley de Protección al Consumidor (Decreto 24-2008)</li></ul></div>
     </div>
     <div class="faq">
-      <details class="rv"><summary>¿Cómo realizo mi pedido?</summary><p>Añade piezas a tu selección, ajusta cantidades y toca “Finalizar por WhatsApp”. Se abrirá un mensaje con tu lista y el total referencial para que lo envíes.</p></details>
-      <details class="rv"><summary>¿Puedo pagar con tarjeta en línea?</summary><p>Esta tienda no procesa pagos. El pago se coordina por WhatsApp mediante transferencia bancaria o pago contra entrega.</p></details>
-      <details class="rv"><summary>¿Envían fuera de San Pedro Sula?</summary><p>Sí. El costo y el tiempo de entrega se confirman al momento de tu pedido.</p></details>
-      <details class="rv"><summary>¿Arman regalos personalizados?</summary><p>Sí. Escríbenos con la ocasión y tu presupuesto y una asesora te propondrá opciones.</p></details>
+      <details class="rv"><summary>¿Cómo hago mi pedido?</summary><p>Añade productos a tu bolsa, revisa cantidades y toca “Finalizar por WhatsApp”. Se abrirá un mensaje con tu lista y el total referencial para que lo envíes.</p></details>
+      <details class="rv"><summary>¿Puedo pagar con tarjeta en línea?</summary><p>Este sitio no procesa pagos. Coordinamos el pago contigo por WhatsApp: transferencia bancaria o pago contra entrega.</p></details>
+      <details class="rv"><summary>¿Envían fuera de San Pedro Sula?</summary><p>Sí. El costo y el tiempo de entrega se confirman al hacer tu pedido.</p></details>
+      <details class="rv"><summary>¿Arman regalos personalizados?</summary><p>Sí. Cuéntanos la ocasión y tu presupuesto y te proponemos opciones.</p></details>
     </div>
   </div>
 </section>
 
 <!-- ============================== CONTACTO ============================== -->
-<section id="contacto">
+<section class="contacto seccion" id="contacto">
   <div class="wrap contacto-grid">
-    <div>
-      <span class="kicker rv">Contacto</span>
-      <h2 class="display h2 rv rv-d1" style="margin-top:16px">Una conversación <em>privada</em></h2>
-      <div class="datos rv rv-d2">
-        <div class="dato"><span>Maison</span><span>San Pedro Sula, Cortés, Honduras</span></div>
-        <div class="dato"><span>WhatsApp</span><span id="wa-num"></span></div>
-        <div class="dato"><span>Horario</span><em class="pc">Por confirmar</em></div>
-        <div class="dato"><span>Redes</span><span>Instagram · Facebook · WhatsApp</span></div>
-      </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px" class="rv rv-d3">
-        <a href="#" class="btn btn-wa" data-wa-texto="Hola, quisiera asesoría sobre fragancias de Esencia & Brillo.">Fragancias</a>
-        <a href="#" class="btn btn-noir" data-wa-texto="Hola, quisiera armar un regalo con Esencia & Brillo.">Regalos</a>
-      </div>
+    <div class="c-card rv">
+      <h2 class="h-3">Estamos para ayudarte.</h2>
+      <p class="muted" style="margin-bottom:20px">Escríbenos y una asesora te responde personalmente.</p>
+      <div class="c-dato"><span>Ubicación</span><span>San Pedro Sula, Cortés</span></div>
+      <div class="c-dato"><span>WhatsApp</span><span id="wa-num"></span></div>
+      <div class="c-dato"><span>Horario</span><span class="pc">Por confirmar</span></div>
+      <div class="ctas" style="justify-content:flex-start;margin-top:24px"><a href="#" class="btn btn-wa" data-wa-general>Escribir por WhatsApp</a></div>
     </div>
-    <form class="form rv rv-d1" id="form" novalidate>
+    <form class="c-card form rv d1" id="form" novalidate>
+      <h2 class="h-3">Envíanos un mensaje.</h2>
       <div class="fila2">
         <div class="campo"><input id="f-n" name="nombre" placeholder=" " autocomplete="name"><label for="f-n">Nombre</label><span class="err" id="e-n"></span></div>
         <div class="campo"><select id="f-c" name="ciudad" aria-label="Ciudad"><option>San Pedro Sula</option><option>Choloma</option><option>Villanueva</option><option>La Lima</option><option>El Progreso</option><option>Otra ciudad</option></select></div>
       </div>
       <div class="campo"><select id="f-m" name="motivo" aria-label="Motivo"><option>Asesoría de producto</option><option>Regalo personalizado</option><option>Envíos</option><option>Cambios</option><option>Otro</option></select></div>
       <div class="campo"><textarea id="f-t" name="mensaje" rows="4" placeholder=" "></textarea><label for="f-t">Tu mensaje</label><span class="err" id="e-t"></span></div>
-      <button class="btn btn-noir" type="submit" style="justify-self:start">Enviar por WhatsApp <span class="fl">→</span></button>
+      <button class="btn btn-primario" type="submit" style="justify-self:start">Enviar por WhatsApp</button>
     </form>
   </div>
 </section>
 </main>
 
-<!-- =============================== FOOTER =============================== -->
+<!-- =============================== PIE =============================== -->
 <footer>
   <div class="wrap">
-    <div class="foot-logo">
-      <svg aria-hidden="true"><use href="#logo"/></svg>
-      <div class="wm">ESENCIA &amp; BRILLO</div>
-      <div class="sub">MAISON · SAN PEDRO SULA · HONDURAS</div>
+    <p class="legal-top">Los precios se muestran en lempiras y son referenciales. La disponibilidad, el costo de envío y la forma de pago se confirman por WhatsApp. Fotografías ilustrativas de Unsplash y Pexels.</p>
+    <div class="foot-cols">
+      <div><h4>Comprar</h4><ul id="f-lineas"></ul></div>
+      <div><h4>Ayuda</h4><ul><li><a href="#ayuda">Entregas</a></li><li><a href="#ayuda">Pagos</a></li><li><a href="#ayuda">Cambios</a></li></ul></div>
+      <div><h4>La Maison</h4><ul><li><a href="#historia">Nuestra historia</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li><a href="#" data-wa-general>WhatsApp</a></li><li>San Pedro Sula, Honduras</li></ul></div>
     </div>
-    <div class="foot-grid">
-      <div><h5>Colección</h5><ul id="f-cats"></ul></div>
-      <div><h5>Servicios</h5><ul><li><a href="#servicios">Entregas</a></li><li><a href="#servicios">Pagos</a></li><li><a href="#servicios">Cambios</a></li></ul></div>
-      <div><h5>Maison</h5><ul><li><a href="#maison">Nuestra historia</a></li><li><a href="#contacto">Contacto</a></li><li><a href="#" data-concierge>Concierge</a></li></ul></div>
-      <div><h5>Proyecto</h5><ul><li>Comercio Electrónico · Grupo 2</li><li>Maestría en Dirección Empresarial y Comercio Internacional</li><li>UTH · 2026</li></ul></div>
-    </div>
-    <div class="legal"><span>© 2026 Esencia &amp; Brillo · Simulación académica de tienda en línea</span><span>Productos, precios y testimonios de ejemplo · Fotografías: Unsplash y Pexels</span></div>
+    <div class="foot-fin"><span>© 2026 Esencia &amp; Brillo. Todos los derechos reservados.</span><span>Honduras</span></div>
   </div>
 </footer>
 
-<!-- ============================ MI SELECCIÓN ============================ -->
+<!-- ============================ HOJA DE PRODUCTO ============================ -->
 <div class="velo" id="velo"></div>
-<aside class="panel" id="panel" aria-label="Mi selección" aria-hidden="true">
-  <div class="panel-h"><h2>Mi selección</h2><button class="x" id="cerrar-panel" aria-label="Cerrar">✕</button></div>
+<div class="hoja" id="hoja" role="dialog" aria-modal="true" aria-labelledby="h-n" aria-hidden="true">
+  <button class="cerrar" data-cerrar aria-label="Cerrar"><svg><use href="#i-x"/></svg></button>
+  <div class="h-img" id="h-img"></div>
+  <div class="h-info">
+    <p class="nuevo" id="h-e"></p>
+    <h2 id="h-n"></h2>
+    <p class="h-precio" id="h-p"></p>
+    <p class="h-desc" id="h-d"></p>
+    <div id="h-ow"><p class="opt-t" id="h-ot"></p><div class="pills" id="h-o"></div></div>
+    <div class="cant"><span class="opt-t" style="margin:0">Cantidad</span><div class="qty"><button id="h-menos" aria-label="Menos">−</button><span id="h-q">1</span><button id="h-mas" aria-label="Más">+</button></div></div>
+    <button class="btn btn-primario btn-xl" id="h-add">Añadir a la bolsa</button>
+    <a class="link-cta chev" id="h-wa" href="#" target="_blank" rel="noopener" style="text-align:center;font-size:17px">Preguntar por WhatsApp</a>
+    <div class="entrega">
+      <div><svg><use href="#i-camion"/></svg><span><b>Entrega:</b> a domicilio en San Pedro Sula y envíos al país. Costo y tiempo se confirman.</span></div>
+      <div><svg><use href="#i-pago"/></svg><span><b>Pago:</b> transferencia o contra entrega.</span></div>
+    </div>
+    <details class="ficha" open><summary>Detalles</summary><dl id="h-f"></dl></details>
+  </div>
+</div>
+
+<!-- ================================ BOLSA ================================ -->
+<aside class="bolsa" id="bolsa" aria-label="Tu bolsa" aria-hidden="true">
+  <div class="bolsa-h"><h2>Tu bolsa</h2><button class="cerrar" data-cerrar aria-label="Cerrar bolsa"><svg><use href="#i-x"/></svg></button></div>
   <div class="items" id="items"></div>
-  <div class="panel-f" id="panel-f">
-    <div class="fila"><span>Piezas</span><span id="t-u">0</span></div>
-    <div class="fila"><span>Envío</span><span class="pc">Por confirmar</span></div>
-    <div class="fila tot"><span>Total referencial</span><span id="t-s">L 0.00</span></div>
-    <p class="nota">Sin pago en línea. Confirmamos disponibilidad, envío y forma de pago por WhatsApp.</p>
-    <button class="btn btn-wa btn-full" id="finalizar">Finalizar por WhatsApp <span class="fl">→</span></button>
-    <button class="vaciar" id="vaciar">Vaciar selección</button>
+  <div class="bolsa-f" id="bolsa-f">
+    <div class="fila"><span>Subtotal</span><span id="t-s">L 0.00</span></div>
+    <div class="fila"><span>Envío</span><span class="pc">Se confirma</span></div>
+    <div class="fila tot"><span>Total referencial</span><span id="t-t">L 0.00</span></div>
+    <p class="nota">Sin cobros en línea. Te confirmamos disponibilidad, envío y forma de pago por WhatsApp.</p>
+    <button class="btn btn-primario btn-xl" id="finalizar">Finalizar por WhatsApp</button>
+    <button class="vaciar" id="vaciar">Vaciar bolsa</button>
   </div>
 </aside>
 
-<!-- ========================== FICHA DE PRODUCTO ========================== -->
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-n" aria-hidden="true">
-  <div class="modal-bg" data-cerrar-modal></div>
-  <div class="modal-box">
-    <button class="x" data-cerrar-modal aria-label="Cerrar">✕</button>
-    <div class="m-img" id="m-img"></div>
-    <div class="m-info">
-      <span class="kicker" id="m-l"></span>
-      <h2 id="m-n"></h2>
-      <div class="m-precio" id="m-p"></div>
-      <p class="m-desc" id="m-d"></p>
-      <div class="ficha" id="m-f"></div>
-      <div id="m-ow"><p class="opts-t" id="m-ot"></p><div class="opts" id="m-o"></div></div>
-      <div class="m-acc">
-        <div class="qty"><button id="m-menos" aria-label="Menos">−</button><span id="m-q">1</span><button id="m-mas" aria-label="Más">+</button></div>
-        <button class="btn btn-noir" id="m-add">Añadir a mi selección</button>
-      </div>
-      <a class="btn btn-linea osc" id="m-wa" href="#" target="_blank" rel="noopener">Consultar con una asesora</a>
-      <div class="resenas"><h5>Reseñas <span class="sim">SIMULADAS</span></h5><div id="m-r"></div></div>
-    </div>
-  </div>
-</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<!-- ============================== CONCIERGE ============================== -->
-<a class="fab-wa" href="#" data-wa-general aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
-</a>
-<button class="fab" id="fab" aria-label="Abrir concierge virtual" aria-expanded="false">
-  <span class="av"><svg><use href="#concierge"/></svg></span><span class="lbl">Concierge</span>
-</button>
-<div class="chat" id="chat" role="dialog" aria-label="Concierge virtual" aria-hidden="true">
-  <div class="chat-h">
-    <div class="av"><svg><use href="#concierge"/></svg></div>
-    <div><h4>Bella · Concierge</h4><small>Asistente virtual · En línea</small></div>
-    <button class="x" id="cerrar-chat" aria-label="Cerrar">✕</button>
-  </div>
+<!-- ============================== ASISTENTE ============================== -->
+<button class="fab" id="fab" aria-label="Abrir asistente" aria-expanded="false"><span class="av">B</span><span class="lbl">¿Te ayudamos?</span></button>
+<div class="chat" id="chat" role="dialog" aria-label="Asistente virtual" aria-hidden="true">
+  <div class="chat-h"><span class="av">B</span><div><b>Bella</b><small>Asistente virtual · responde al instante</small></div><button class="cerrar" id="cerrar-chat" aria-label="Cerrar"><svg><use href="#i-x"/></svg></button></div>
   <div class="msgs" id="msgs" aria-live="polite"></div>
   <div class="sugs" id="sugs"></div>
-  <form class="chat-f" id="chat-f"><label class="sr-only" for="chat-in">Pregunta</label><input id="chat-in" placeholder="Escribe tu consulta…" autocomplete="off"><button type="submit" aria-label="Enviar">→</button></form>
+  <form class="chat-f" id="chat-f"><label class="sr-only" for="chat-in">Mensaje</label><input id="chat-in" placeholder="Escribe tu pregunta" autocomplete="off"><button type="submit" aria-label="Enviar"><svg><use href="#i-enviar"/></svg></button></form>
 </div>
-
-<div class="toasts" id="toasts" aria-live="polite"></div>
 
 <script>
 /* =====================================================================
    1. CONFIGURACIÓN
-   WA_NUMERO: número de WhatsApp Business con código de país, sin signos
-   (ej. '504XXXXXXXX'). Vacío = WhatsApp deja elegir el contacto.
+   WA_NUMERO: WhatsApp Business con código de país, sin signos (ej. '504XXXXXXXX').
+   Vacío = WhatsApp abre el mensaje y deja elegir el contacto.
    ===================================================================== */
 const WA_NUMERO = '';
-const KEY = 'eyb_seleccion_v2';
-/* Fotos descargadas y guardadas en la carpeta img/ del repositorio.
-   Si alguna falta, se usa la copia de Unsplash y, por último, el logo. */
-const FOTOS = {
-  'photo-1621275155732-2bff82c64fd2':'perfume-ambar.jpg',
-  'photo-1760920250029-36af9369a0bb':'perfume-noir.jpg',
-  'photo-1615634260167-c8cdede054de':'locion-floral.jpg',
-  'PEXELS-8167156':'body-mist.jpg',
-  'photo-1720423738890-37689a6f6b95':'splash.jpg',
-  'photo-1761211115639-54394f139142':'collar-corazon.jpg',
-  'photo-1619203451989-53f6d2ca0e57':'argollas.jpg',
-  'photo-1602527418456-8b5cd2c7a4c2':'pulsera.jpg',
-  'photo-1611955167811-4711904bb9f8':'anillo.jpg',
-  'photo-1704445010872-2faefdd733aa':'aretes.jpg',
-  'photo-1611107683227-e9060eccd846':'cadena.jpg',
-  'photo-1751437774882-deeea4352018':'reloj.jpg',
-  'photo-1546333456-3e8ed81f41e2':'bolso.jpg',
-  'photo-1590399830582-0bd885dee8e2':'lentes-modelo.jpg',
-  'photo-1764650909534-ebe7b1206466':'caja-regalo.jpg',
-  'photo-1586878340506-af074f2ee999':'set-joyeria.jpg',
-  'photo-1642683496509-121deffa9cf0':'crema.jpg',
-  'photo-1586878341340-1971696a9b71':'maison.jpg'
-};
-const remota = (id, w=900) => id.startsWith('PEXELS-') ? `https://images.pexels.com/photos/${id.slice(7)}/pexels-photo-${id.slice(7)}.jpeg?auto=compress&w=${w}` : `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=78`;
-const img = (id, w=900) => FOTOS[id] ? 'img/' + FOTOS[id] : remota(id, w);
+const KEY = 'eyb_bolsa_v3';
 const waURL = t => `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(t)}`;
 const abrirWA = t => window.open(waURL(t), '_blank', 'noopener');
 
+/* Fotos sin fondo (img/hd/<nombre>-<ancho>.webp). Respaldo: foto original en img/ */
+function srcset(n){ return `img/hd/${n}-800.webp 800w, img/hd/${n}-1600.webp 1600w, img/hd/${n}-3840.webp 3840w`; }
+function imgTag(n, alt, sizes, extra=''){
+  return `<img src="img/hd/${n}-800.webp" srcset="${srcset(n)}" sizes="${sizes}" alt="${esc(alt)}" width="800" height="800" loading="lazy" decoding="async" ${extra} onerror="fotoRespaldo(this,'${n}')">`;
+}
+/* Si una foto no carga, se muestra el monograma de la marca en su lugar */
+window.fotoRespaldo = el => { if (el.dataset.r) return; el.dataset.r = 1; el.removeAttribute('srcset'); el.src = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="60" cy="60" r="40" fill="none" stroke="#d4b26f" stroke-width="1.5"/><text x="60" y="68" text-anchor="middle" font-family="Georgia" font-size="24" fill="#b08d4c">E&amp;B</text></svg>'); };
+
 /* =====================================================================
-   2. LÍNEAS (sub-marcas) Y CATÁLOGO
-   Fotografías reales de Unsplash. Para usar fotos propias, reemplaza
-   el campo "f" por la URL completa de la imagen.
+   2. CATÁLOGO
    ===================================================================== */
 const LINEAS = [
-  { id:'fragancias', nombre:'Fragancias', marca:'Maison Parfum',   icono:'sm-parfum',  foto:'photo-1621275155732-2bff82c64fd2', desc:'Lociones, perfumes, body mists y splash' },
-  { id:'joyeria',    nombre:'Joyería',    marca:'Atelier Brillo',  icono:'sm-atelier', foto:'photo-1761211115639-54394f139142', desc:'Acero inoxidable y baño de oro' },
-  { id:'bisuteria',  nombre:'Bisutería',  marca:'Bijou E&B',       icono:'sm-bijou',   foto:'photo-1611107683227-e9060eccd846', desc:'Moda accesible para cada día' },
-  { id:'accesorios', nombre:'Accesorios', marca:'E&B Accessoires', icono:'sm-acc',     foto:'photo-1546333456-3e8ed81f41e2',   desc:'Relojes, bolsos y lentes' },
-  { id:'regalos',    nombre:'Regalos',    marca:'Le Cadeau',       icono:'sm-gift',    foto:'photo-1764650909534-ebe7b1206466', desc:'Kits y sets para ocasiones especiales' }
+  { id:'fragancias', nombre:'Fragancias', marca:'Maison Parfum',    foto:'perfume-noir',   fondo:'#ece7f1' },
+  { id:'joyeria',    nombre:'Joyería',    marca:'Atelier Brillo',   foto:'collar-corazon', fondo:'#f3ebdf' },
+  { id:'bisuteria',  nombre:'Bisutería',  marca:'Bijou E&B',        foto:'aretes',         fondo:'#f6ece6' },
+  { id:'accesorios', nombre:'Accesorios', marca:'E&B Accessoires',  foto:'lentes',         fondo:'#e9eef0' },
+  { id:'regalos',    nombre:'Regalos',    marca:'Le Cadeau',        foto:'caja-regalo',    fondo:'#f4efe4' }
 ];
-
-const PRODUCTOS = [
-  { id:'ambar-royal', l:'fragancias', n:'Ámbar Royal · Eau de Parfum', p:1450, f:'photo-1621275155732-2bff82c64fd2', e:'Edición especial',
-    d:'Frasco de inspiración art déco con notas cálidas de ámbar y vainilla. Una firma olfativa para la noche.', ficha:{Tipo:'Eau de parfum', Familia:'Ambarada', Contenido:'100 ml', Ocasión:'Noche'},
-    o:{t:'Contenido', v:['50 ml','100 ml']} },
-  { id:'noir-intense', l:'fragancias', n:'Noir Intense · Parfum', p:1290, f:'photo-1760920250029-36af9369a0bb', e:'Nuevo',
-    d:'Cristal transparente y tapa negra. Notas amaderadas y especiadas, elegantes y profundas.', ficha:{Tipo:'Parfum', Familia:'Amaderada', Contenido:'100 ml', Ocasión:'Noche'} },
-  { id:'blanc-floral', l:'fragancias', n:'Blanc Floral · Loción', p:780, f:'photo-1615634260167-c8cdede054de',
-    d:'Una loción luminosa de flores blancas en frasco de cristal, perfecta para el día y la oficina.', ficha:{Tipo:'Loción', Familia:'Floral', Contenido:'100 ml', Ocasión:'Día'} },
-  { id:'jardin-mist', l:'fragancias', n:'Jardín · Body Mist', p:420, f:'PEXELS-8167156',
-    d:'Bruma corporal fresca con notas cítricas, para perfumar suavemente después de la ducha.', ficha:{Tipo:'Body mist', Familia:'Cítrica', Contenido:'250 ml', Ocasión:'Diario'},
-    o:{t:'Aroma', v:['Cítrico','Vainilla','Coco']} },
-  { id:'cristal-splash', l:'fragancias', n:'Rouge · Body Splash', p:340, f:'photo-1720423738890-37689a6f6b95',
-    d:'Splash ligero de notas frutales y frutos rojos, ideal para el clima cálido de San Pedro Sula.', ficha:{Tipo:'Body splash', Familia:'Frutal', Contenido:'250 ml', Ocasión:'Diario'} },
-
-  { id:'coeur-or', l:'joyeria', n:'Collar Cœur d’Or', p:690, f:'photo-1761211115639-54394f139142', e:'Favorito',
-    d:'Dije de corazón con detalle envuelto en baño de oro. Un clásico para regalar.', ficha:{Material:'Acero con baño de oro', Largo:'45 cm', Cierre:'Mosquetón', Hipoalergénico:'Sí'},
-    o:{t:'Tono', v:['Dorado','Plateado']} },
-  { id:'argollas-eclat', l:'joyeria', n:'Argollas Éclat', p:590, f:'photo-1619203451989-53f6d2ca0e57',
-    d:'Argollas con zirconias que capturan la luz desde cualquier ángulo.', ficha:{Material:'Acero con baño de oro', Diámetro:'2.5 cm', Piedras:'Zirconia', Cierre:'Click'},
-    o:{t:'Tamaño', v:['Pequeña','Mediana']} },
-  { id:'pulsera-soleil', l:'joyeria', n:'Pulsera Soleil', p:520, f:'photo-1602527418456-8b5cd2c7a4c2',
-    d:'Pulsera dorada de líneas finas para llevar sola o en capas.', ficha:{Material:'Acero inoxidable', Largo:'18 cm + ext.', Acabado:'Dorado pulido', Hipoalergénico:'Sí'} },
-  { id:'anillo-topaze', l:'joyeria', n:'Anillo Topaze', p:640, f:'photo-1611955167811-4711904bb9f8', e:'Edición especial',
-    d:'Anillo con piedra color miel y engaste dorado. Un toque vintage y sofisticado.', ficha:{Material:'Acero con baño de oro', Piedra:'Cristal color topacio', Tallas:'6 · 7 · 8', Hipoalergénico:'Sí'},
-    o:{t:'Talla', v:['6','7','8']} },
-
-  { id:'aretes-lumiere', l:'bisuteria', n:'Aretes Lumière', p:260, f:'photo-1704445010872-2faefdd733aa',
-    d:'Aretes dorados de diseño moderno, ligeros y cómodos para todo el día.', ficha:{Material:'Bisutería fina', Acabado:'Dorado', Cierre:'Mariposa', Estilo:'Moderno'} },
-  { id:'cadena-riviera', l:'bisuteria', n:'Cadena Riviera', p:310, f:'photo-1611107683227-e9060eccd846', e:'Favorito',
-    d:'Cadena dorada de eslabón marcado que eleva cualquier look.', ficha:{Material:'Bisutería fina', Largo:'50 cm', Acabado:'Dorado', Estilo:'Statement'} },
-
-  { id:'reloj-rose', l:'accesorios', n:'Reloj Rose Minimal', p:1150, f:'photo-1751437774882-deeea4352018', e:'Nuevo',
-    d:'Caja en tono rose gold y esfera limpia: precisión con elegancia discreta.', ficha:{Caja:'Metal tono rose gold', Esfera:'34 mm', Mecanismo:'Cuarzo', Correa:'Metálica'} },
-  { id:'bolso-cognac', l:'accesorios', n:'Bolso Cognac', p:1380, f:'photo-1546333456-3e8ed81f41e2',
-    d:'Bolso estructurado en tono cognac con asas firmes; espacio para lo esencial.', ficha:{Material:'Cuero sintético', Medidas:'28 × 20 cm', Cierre:'Broche', Correa:'Removible'},
-    o:{t:'Color', v:['Cognac','Negro','Nude']} },
-  { id:'lentes-riviera', l:'accesorios', n:'Lentes Riviera', p:560, f:'photo-1590399830582-0bd885dee8e2',
-    d:'Montura en tono carey con lentes marrones; el accesorio de sol más versátil.', ficha:{Montura:'Acetato carey', Lente:'Marrón', Protección:'Por confirmar', Incluye:'Estuche'} },
-
-  { id:'coffret-maison', l:'regalos', n:'Coffret Maison', p:1850, f:'photo-1764650909534-ebe7b1206466', e:'Regalo',
-    d:'Caja de regalo con lazo dorado: loción + crema corporal + tarjeta personalizada.', ficha:{Incluye:'Loción y crema', Empaque:'Caja con lazo dorado', Tarjeta:'Personalizada', Ocasión:'Cumpleaños'} },
-  { id:'set-or', l:'regalos', n:'Set Or · Joyería', p:1290, f:'photo-1586878340506-af074f2ee999',
-    d:'Collar y brazaletes dorados presentados en bandeja de regalo.', ficha:{Incluye:'Collar y brazaletes', Material:'Acero con baño de oro', Empaque:'Estuche', Ocasión:'Aniversario'} },
-  { id:'creme-corps', l:'regalos', n:'Crème Corps', p:390, f:'photo-1642683496509-121deffa9cf0',
-    d:'Crema corporal hidratante de textura sedosa, el complemento ideal de cualquier regalo.', ficha:{Tipo:'Crema corporal', Contenido:'200 ml', Aroma:'Suave', Uso:'Diario'} }
-];
-
-const RESENAS = [
-  ['★★★★★','Clienta de ejemplo','Tal como en la foto, llegó muy bien empacado.'],
-  ['★★★★★','Clienta de ejemplo','La asesoría por WhatsApp fue excelente.'],
-  ['★★★★☆','Clienta de ejemplo','Muy elegante, perfecto para regalar.']
-];
-const TESTIMONIOS = [
-  ['“El Coffret Maison fue el regalo perfecto para mi mamá. Todas preguntaron dónde lo compré.”','Clienta de ejemplo · San Pedro Sula'],
-  ['“Las argollas siguen brillando después de meses. Se sienten de mucho más valor.”','Clienta de ejemplo · Choloma'],
-  ['“Ver los precios y mandar mi selección por WhatsApp me ahorró muchísimo tiempo.”','Clienta de ejemplo · Villanueva']
+const P = [
+  { id:'ambar-royal', l:'fragancias', n:'Ámbar Royal', s:'Eau de Parfum', p:1450, f:'perfume-ambar', nuevo:'Edición especial',
+    d:'Cristal tallado y notas cálidas de ámbar y vainilla. Una firma para la noche.', ficha:{Tipo:'Eau de parfum',Familia:'Ambarada',Ocasión:'Noche'}, o:{t:'Contenido',v:['50 ml','100 ml'],pr:[980,1450]} },
+  { id:'noir-intense', l:'fragancias', n:'Noir Intense', s:'Parfum', p:1290, f:'perfume-noir', nuevo:'Nuevo',
+    d:'Notas amaderadas y especiadas en un frasco de líneas puras.', ficha:{Tipo:'Parfum',Familia:'Amaderada',Contenido:'100 ml'} },
+  { id:'body-mist', l:'fragancias', n:'Brume Corps', s:'Body Mist', p:420, f:'body-mist',
+    d:'Bruma corporal fresca para perfumar suavemente después de la ducha.', ficha:{Tipo:'Body mist',Contenido:'250 ml',Uso:'Diario'}, o:{t:'Aroma',v:['Cítrico','Vainilla','Coco']} },
+  { id:'rouge-splash', l:'fragancias', n:'Rouge', s:'Body Splash', p:340, f:'splash',
+    d:'Notas frutales y de frutos rojos, ideales para el clima cálido.', ficha:{Tipo:'Body splash',Familia:'Frutal',Contenido:'250 ml'} },
+  { id:'coeur-or', l:'joyeria', n:'Cœur d’Or', s:'Collar', p:690, f:'collar-corazon', nuevo:'Favorito',
+    d:'Dije de corazón con detalle envuelto. Un clásico para regalar.', ficha:{Material:'Acero con baño de oro',Largo:'45 cm',Cierre:'Mosquetón',Hipoalergénico:'Sí'}, o:{t:'Tono',v:['Dorado','Plateado'],c:['#d9b56e','#c9ccd1']} },
+  { id:'argollas-eclat', l:'joyeria', n:'Éclat', s:'Argollas', p:590, f:'argollas',
+    d:'Argollas con zirconias que capturan la luz desde cualquier ángulo.', ficha:{Material:'Acero con baño de oro',Piedras:'Zirconia',Cierre:'Click'}, o:{t:'Tamaño',v:['Pequeña','Mediana']} },
+  { id:'pulsera-soleil', l:'joyeria', n:'Soleil', s:'Pulsera', p:520, f:'pulsera',
+    d:'Eslabón tejido de acabado pulido, para llevar sola o en capas.', ficha:{Material:'Acero inoxidable',Largo:'18 cm + ext.',Acabado:'Dorado'} },
+  { id:'anillo-topaze', l:'joyeria', n:'Topaze', s:'Anillo', p:640, f:'anillo', nuevo:'Edición especial',
+    d:'Piedras color miel en engaste dorado. Vintage y sofisticado.', ficha:{Material:'Acero con baño de oro',Piedra:'Cristal color topacio'}, o:{t:'Talla',v:['6','7','8']} },
+  { id:'aretes-lumiere', l:'bisuteria', n:'Lumière', s:'Aretes', p:260, f:'aretes',
+    d:'Nudo dorado de diseño moderno, ligero y cómodo.', ficha:{Material:'Bisutería fina',Cierre:'Mariposa'} },
+  { id:'cadena-riviera', l:'bisuteria', n:'Riviera', s:'Set de cadena y brazaletes', p:310, f:'cadena', nuevo:'Favorito',
+    d:'Cadena y brazaletes dorados que elevan cualquier look.', ficha:{Material:'Bisutería fina',Acabado:'Dorado'} },
+  { id:'bolso-cognac', l:'accesorios', n:'Cognac', s:'Bolso', p:1380, f:'bolso',
+    d:'Bolso de líneas limpias en tono cognac; espacio para lo esencial.', ficha:{Material:'Cuero sintético',Uso:'Diario'}, o:{t:'Color',v:['Cognac','Negro','Nude'],c:['#8a5a33','#1d1d1f','#d9c2a7']} },
+  { id:'satchel-gris', l:'accesorios', n:'Satchel', s:'Bolso de mano', p:1490, f:'satchel', nuevo:'Nuevo',
+    d:'Estructura clásica con hebillas doradas y asa superior.', ficha:{Material:'Cuero sintético',Herrajes:'Dorados',Correa:'Desmontable'} },
+  { id:'lentes-riviera', l:'accesorios', n:'Riviera', s:'Lentes de sol', p:560, f:'lentes',
+    d:'Montura dorada redonda, ligera y atemporal.', ficha:{Montura:'Metal dorado',Protección:'Por confirmar',Incluye:'Estuche'} },
+  { id:'coffret-maison', l:'regalos', n:'Coffret Maison', s:'Kit de regalo', p:1850, f:'caja-regalo', nuevo:'Regalo',
+    d:'Loción + crema corporal en caja con lazo dorado y tarjeta personalizada.', ficha:{Incluye:'Loción y crema',Empaque:'Caja con lazo dorado'} },
+  { id:'set-or', l:'regalos', n:'Set Or', s:'Kit de joyería', p:1290, f:'set-joyeria',
+    d:'Brazalete y collar dorados presentados en estuche.', ficha:{Incluye:'Brazalete y collar',Material:'Acero con baño de oro'} }
 ];
 
 /* =====================================================================
@@ -894,275 +718,240 @@ const $ = (s,c=document) => c.querySelector(s);
 const $$ = (s,c=document) => [...c.querySelectorAll(s)];
 const nf = new Intl.NumberFormat('es-HN',{minimumFractionDigits:2,maximumFractionDigits:2});
 const L = n => 'L ' + nf.format(n);
-const P = id => PRODUCTOS.find(x => x.id === id);
-const linea = id => LINEAS.find(x => x.id === id) || {};
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
-const src = f => f.startsWith('http') ? f : img(f);
+const prod = id => P.find(x => x.id === id);
+const linea = id => LINEAS.find(x => x.id === id) || {};
+const precio = (x, v) => (x.o && x.o.pr) ? x.o.pr[x.o.v.indexOf(v)] ?? x.p : x.p;
+const desde = x => (x.o && x.o.pr) ? Math.min(...x.o.pr) : x.p;
 
-/* Foto con carga suave y respaldo elegante (logo) si no carga */
-function foto(f, alt, w=900) {
-  const u = f.startsWith('http') ? f : img(f, w);
-  return `<div class="ph"><img src="${u}" data-remota="${f.startsWith('http')?'':remota(f,w)}" alt="${esc(alt)}" loading="lazy" decoding="async" onload="fotoOk(this)" onerror="fotoError(this)"></div>`;
-}
-window.fotoOk = el => { el.classList.add('ok'); el.parentElement.classList.add('lista'); };
-window.fotoError = el => {
-  if (el.dataset.remota && !el.dataset.intento) { el.dataset.intento = 1; el.src = el.dataset.remota; return; }
-  const ph = el.parentElement; if (!ph) return; ph.classList.add('lista');
-  ph.insertAdjacentHTML('beforeend','<div class="fallback"><svg width="90" height="90"><use href="#logo"/></svg></div>'); el.remove();
-};
-function montarFotos() {
-  $$('.ph[data-src]').forEach(ph => {
-    const hero = !!ph.closest('.hero');
-    ph.innerHTML = `<img src="${img(ph.dataset.src, +ph.dataset.w || 1200)}" data-remota="${remota(ph.dataset.src, +ph.dataset.w || 1200)}" alt="${esc(ph.dataset.alt||'')}" ${hero?'fetchpriority="high"':'loading="lazy"'} onload="fotoOk(this)" onerror="fotoError(this)">`;
-    ph.removeAttribute('data-src');
-  });
-}
-function toast(html) {
-  const t = document.createElement('div'); t.className = 'toast'; t.innerHTML = html; $('#toasts').appendChild(t);
-  setTimeout(() => { t.classList.add('out'); setTimeout(() => t.remove(), 500); }, 2800);
-}
+/* Imágenes declaradas en el HTML */
+$$('img[data-foto]').forEach(im => {
+  const n = im.dataset.foto;
+  im.src = `img/hd/${n}-1600.webp`; im.srcset = srcset(n); im.sizes = im.dataset.sizes || '100vw';
+  im.decoding = 'async'; im.onerror = () => fotoRespaldo(im, n);
+});
 
 /* =====================================================================
-   4. ENCABEZADO, AVISOS Y SUB-MARCAS
+   4. NAVEGACIÓN
    ===================================================================== */
-const avisos = ['Entregas a domicilio en San Pedro Sula','Envíos a otras ciudades del país','Asesoría privada por WhatsApp','Kits de regalo personalizados','Transferencia o pago contra entrega'];
-$('#aviso-track').innerHTML = [...avisos, ...avisos, ...avisos, ...avisos].map(a => `<span>✦ ${a}</span>`).join('');
-const sub = LINEAS.map(x => `<div class="sublogo"><svg><use href="#${x.icono}"/></svg><div><b>${x.marca}</b><small>${x.nombre.toUpperCase()}</small></div></div>`).join('');
-$('#marquee').innerHTML = sub + sub;
-
-const header = $('#header');
-const onScroll = () => header.classList.toggle('solid', scrollY > window.innerHeight * .7);
-addEventListener('scroll', onScroll, { passive:true });
 const menu = $('#menu'), burger = $('#burger');
 burger.addEventListener('click', () => { const on = menu.classList.toggle('on'); burger.setAttribute('aria-expanded', on); });
-$$('.menu a').forEach(a => a.addEventListener('click', () => menu.classList.remove('on')));
+$$('#menu a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('on'); burger.setAttribute('aria-expanded', false); }));
+$('#ir-buscar').addEventListener('click', () => setTimeout(() => $('#q').focus({preventScroll:true}), 600));
+
+/* Portada: la foto se acomoda suavemente al hacer scroll */
+const heroImg = $('#hero-img');
+let ticking = false;
+addEventListener('scroll', () => {
+  if (ticking) return; ticking = true;
+  requestAnimationFrame(() => { const p = Math.min(1, Math.max(0, scrollY / 600)); heroImg.style.setProperty('--p', p); ticking = false; });
+}, { passive:true });
 
 /* =====================================================================
-   5. CATEGORÍAS EDITORIALES
-   ===================================================================== */
-$('#cats').innerHTML = LINEAS.map((x,i) => `
-  <a href="#tienda" class="cat rv ${i?'rv-d'+Math.min(i,3):''}" data-ir="${x.id}" data-cursor>
-    ${foto(x.foto, x.nombre, i===0?1400:900)}
-    <div class="cat-txt"><div><small>${x.marca}</small><h3>${x.nombre}</h3></div><span>→</span></div>
-  </a>`).join('');
-$('#f-cats').innerHTML = LINEAS.map(x => `<li><a href="#tienda" data-ir="${x.id}">${x.nombre}</a></li>`).join('');
-
-/* =====================================================================
-   6. TIENDA
+   5. TIENDA
    ===================================================================== */
 let lineaSel = '';
-$('#chips').innerHTML = [{id:'',nombre:'Todo'}, ...LINEAS].map(x => `<button class="chip ${x.id===''?'sel':''}" data-chip="${x.id}" role="tab">${x.nombre}</button>`).join('');
+$('#cats').innerHTML = LINEAS.map(x => `<a href="#tienda" class="cat-item" data-linea="${x.id}"><span class="ci" style="background:${x.fondo}">${imgTag(x.foto, x.nombre, '96px')}</span><b>${x.nombre}</b></a>`).join('');
+$('#segment').innerHTML = [{id:'',nombre:'Todo'}, ...LINEAS].map(x => `<button data-linea="${x.id}" aria-pressed="${x.id===''}">${x.nombre}</button>`).join('');
+$('#f-lineas').innerHTML = LINEAS.map(x => `<li><a href="#tienda" data-linea="${x.id}">${x.nombre}</a></li>`).join('');
 
-function card(x) {
-  return `<article class="card" data-ver="${x.id}" data-cursor tabindex="0" aria-label="${esc(x.n)}">
-    <div class="card-media">
-      ${foto(x.f, x.n, 700)}
-      ${x.e ? `<span class="etq ${x.e==='Nuevo'||x.e==='Edición especial'?'oscura':''}">${x.e}</span>` : ''}
-      <div class="quick"><button data-ver="${x.id}">Ver ficha</button><button data-add="${x.id}">+ Añadir</button></div>
-    </div>
-    <div class="card-info"><div><small>${linea(x.l).marca}</small><h3>${esc(x.n)}</h3></div><span class="precio">${L(x.p)}</span></div>
+function tarjeta(x) {
+  const pts = x.o && x.o.c ? x.o.c.map(c => `<i style="background:${c}"></i>`).join('') : '';
+  return `<article class="card" data-ver="${x.id}" tabindex="0" aria-label="${esc(x.n + ', ' + x.s)}">
+    <div class="c-img">${imgTag(x.f, x.n + ' · ' + x.s, '(max-width: 600px) 45vw, (max-width: 1068px) 40vw, 320px')}</div>
+    <p class="nuevo">${x.nuevo || ''}</p>
+    <h3>${esc(x.n)} <span style="font-weight:400;color:var(--mute)">· ${esc(x.s)}</span></h3>
+    <p class="desc">${esc(x.d)}</p>
+    <div class="opciones">${pts}</div>
+    <div class="pie"><span class="precio">${x.o && x.o.pr ? 'Desde ' : ''}${L(desde(x))}</span><button class="btn btn-primario btn-s" data-add="${x.id}">Comprar</button></div>
   </article>`;
 }
-function pintarTienda() {
+function pintar() {
   const q = norm($('#q').value.trim()), o = $('#orden').value;
-  let lista = PRODUCTOS.filter(x => (!lineaSel || x.l === lineaSel) &&
-    (!q || norm([x.n, x.d, linea(x.l).nombre, linea(x.l).marca, ...Object.values(x.ficha)].join(' ')).includes(q)));
-  if (o==='asc') lista.sort((a,b)=>a.p-b.p);
-  if (o==='desc') lista.sort((a,b)=>b.p-a.p);
-  if (o==='az') lista.sort((a,b)=>a.n.localeCompare(b.n,'es'));
-  $('#conteo').textContent = `${lista.length} pieza${lista.length!==1?'s':''}${lineaSel?' · '+linea(lineaSel).nombre:''}`;
-  $('#grid').innerHTML = lista.length ? lista.map(card).join('') : `<div class="vacio"><p class="display" style="font-size:2rem">Sin resultados</p><p>Prueba con otra búsqueda.</p></div>`;
+  let lista = P.filter(x => (!lineaSel || x.l === lineaSel) && (!q || norm([x.n, x.s, x.d, linea(x.l).nombre, linea(x.l).marca, ...Object.values(x.ficha)].join(' ')).includes(q)));
+  if (o === 'asc') lista.sort((a,b) => desde(a) - desde(b));
+  if (o === 'desc') lista.sort((a,b) => desde(b) - desde(a));
+  if (o === 'az') lista.sort((a,b) => a.n.localeCompare(b.n,'es'));
+  $('#conteo').textContent = `${lista.length} producto${lista.length !== 1 ? 's' : ''}${lineaSel ? ' en ' + linea(lineaSel).nombre : ''}`;
+  $('#grid').innerHTML = lista.length ? lista.map(tarjeta).join('') : `<div class="vacio"><p class="h-3">Sin resultados.</p><p>Prueba con otra búsqueda.</p></div>`;
+  observar();
 }
-function elegirLinea(id) { lineaSel = id; $$('.chip').forEach(c => c.classList.toggle('sel', c.dataset.chip === id)); pintarTienda(); }
-$('#q').addEventListener('input', pintarTienda);
-$('#orden').addEventListener('change', pintarTienda);
+function elegir(id) {
+  lineaSel = id;
+  $$('#segment button').forEach(b => b.setAttribute('aria-pressed', b.dataset.linea === id));
+  $$('.cat-item').forEach(c => c.classList.toggle('sel', c.dataset.linea === id));
+  pintar();
+}
+$('#q').addEventListener('input', pintar);
+$('#orden').addEventListener('change', pintar);
 
 document.addEventListener('click', e => {
   const t = e.target;
-  const chip = t.closest('[data-chip]'); if (chip) { elegirLinea(chip.dataset.chip); return; }
-  const ir = t.closest('[data-ir]'); if (ir) { elegirLinea(ir.dataset.ir); return; }
-  const add = t.closest('[data-add]'); if (add) { e.stopPropagation(); const x = P(add.dataset.add); agregar(x.id, x.o ? x.o.v[0] : '', 1); return; }
-  const ver = t.closest('[data-ver]'); if (ver) { abrirFicha(ver.dataset.ver); return; }
-  const cg = t.closest('[data-concierge]'); if (cg) { e.preventDefault(); toggleChat(true); return; }
-  const wg = t.closest('[data-wa-general]'); if (wg) { e.preventDefault(); abrirWA('Hola, vi la tienda en línea de Esencia & Brillo y quisiera una asesoría.'); return; }
-  const wt = t.closest('[data-wa-texto]'); if (wt) { e.preventDefault(); abrirWA(wt.dataset.waTexto); }
+  const ln = t.closest('[data-linea]'); if (ln) { elegir(ln.dataset.linea); if (ln.tagName === 'BUTTON') return; }
+  const add = t.closest('[data-add]'); if (add) { e.stopPropagation(); const x = prod(add.dataset.add); if (x.o) { abrir(x.id); } else { agregar(x.id, '', 1); } return; }
+  const ver = t.closest('[data-ver]'); if (ver) { e.preventDefault(); abrir(ver.dataset.ver); return; }
+  const wg = t.closest('[data-wa-general]'); if (wg) { e.preventDefault(); abrirWA('Hola, vi la tienda en línea de Esencia & Brillo y quisiera asesoría.'); return; }
+  if (t.closest('[data-cerrar]')) { cerrarTodo(); return; }
 });
 document.addEventListener('keydown', e => {
-  if (e.key === 'Enter' && e.target.matches('.card[data-ver]')) abrirFicha(e.target.dataset.ver);
-  if (e.key === 'Escape') { if ($('#modal').classList.contains('on')) cerrarFicha(); else if ($('#panel').classList.contains('on')) cerrarPanel(); else toggleChat(false); }
+  if (e.key === 'Enter' && e.target.matches('.card[data-ver]')) abrir(e.target.dataset.ver);
+  if (e.key === 'Escape') { cerrarTodo(); chat(false); }
 });
 
 /* =====================================================================
-   7. MI SELECCIÓN (persistente con localStorage)
+   6. HOJA DE PRODUCTO
    ===================================================================== */
-let sel = (() => { try { return (JSON.parse(localStorage.getItem(KEY)) || []).filter(i => P(i.id)); } catch { return []; } })();
-const guardar = () => { try { localStorage.setItem(KEY, JSON.stringify(sel)); } catch {} };
-const tot = () => ({ u: sel.reduce((a,i)=>a+i.q,0), s: sel.reduce((a,i)=>a+i.q*P(i.id).p,0) });
-
-function agregar(id, v, q) {
-  const ex = sel.find(i => i.id === id && i.v === v); ex ? ex.q += q : sel.push({ id, v, q });
-  guardar(); pintarSel();
-  const b = $('#badge'); b.classList.add('pop'); setTimeout(() => b.classList.remove('pop'), 350);
-  toast(`<span style="color:var(--champagne)">✦</span><span>${esc(P(id).n)}${v?' · '+esc(v):''}<br><small style="opacity:.7">Añadido a tu selección</small></span>`);
+const h = { id:null, v:'', q:1, foco:null };
+function abrir(id) {
+  const x = prod(id); Object.assign(h, { id, v: x.o ? x.o.v[0] : '', q:1, foco: document.activeElement });
+  $('#h-img').innerHTML = imgTag(x.f, x.n + ' · ' + x.s, '(max-width: 834px) 90vw, 540px', 'loading="eager"');
+  $('#h-e').textContent = x.nuevo || linea(x.l).marca;
+  $('#h-n').textContent = `${x.n} · ${x.s}`;
+  $('#h-d').textContent = x.d;
+  $('#h-f').innerHTML = Object.entries({Línea: linea(x.l).marca, ...x.ficha}).map(([k,v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
+  $('#h-ow').style.display = x.o ? '' : 'none';
+  pintarHoja();
+  $('#velo').classList.add('on'); $('#hoja').classList.add('on'); $('#hoja').setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => $('#h-add').focus({preventScroll:true}), 450);
+  const box = $('#h-img');
+  box.onmousemove = ev => { const im = box.querySelector('img'); if (!im) return; const r = box.getBoundingClientRect(); im.style.transformOrigin = `${(ev.clientX-r.left)/r.width*100}% ${(ev.clientY-r.top)/r.height*100}%`; im.style.transform = 'scale(1.7)'; };
+  box.onmouseleave = () => { const im = box.querySelector('img'); if (im) im.style.transform = ''; };
 }
-function pintarSel() {
-  const {u,s} = tot();
-  $('#badge').textContent = u; $('#t-u').textContent = u; $('#t-s').textContent = L(s);
-  $('#panel-f').style.display = sel.length ? '' : 'none';
-  if (!sel.length) { $('#items').innerHTML = `<div class="vacio-p"><p class="display">Tu selección está vacía</p><p>Descubre la colección y elige tus piezas favoritas.</p><br><a href="#tienda" class="btn btn-noir" data-cerrar>Ver colección</a></div>`; return; }
-  $('#items').innerHTML = sel.map((i,k) => { const x = P(i.id); return `
-    <div class="item">${foto(x.f, x.n, 240)}
-      <div><small>${linea(x.l).marca}</small><h4>${esc(x.n)}</h4><div class="v">${i.v?esc(i.v)+' · ':''}${L(x.p)}</div><button class="quitar" data-quitar="${k}">Quitar</button></div>
-      <div class="der"><span style="font-family:var(--serif)">${L(x.p*i.q)}</span><div class="qty"><button data-menos="${k}" aria-label="Menos">−</button><span>${i.q}</span><button data-mas="${k}" aria-label="Más">+</button></div></div>
+function pintarHoja() {
+  const x = prod(h.id), pu = precio(x, h.v);
+  if (x.o) {
+    $('#h-ot').innerHTML = `${x.o.t}. <span>${esc(h.v)}</span>`;
+    $('#h-o').innerHTML = x.o.v.map((v,i) => `<button class="pill" data-opt="${esc(v)}" aria-pressed="${v===h.v}">${x.o.c ? `<i style="display:inline-block;width:12px;height:12px;border-radius:50%;background:${x.o.c[i]};margin-right:8px;vertical-align:-1px;border:1px solid rgba(0,0,0,.15)"></i>` : ''}${esc(v)}</button>`).join('');
+  }
+  $('#h-q').textContent = h.q;
+  $('#h-p').textContent = h.q > 1 ? `${L(pu)} c/u · ${L(pu*h.q)}` : L(pu);
+  $('#h-wa').href = waURL(`Hola, quisiera consultar por ${x.n} · ${x.s}${h.v ? ' (' + h.v + ')' : ''} × ${h.q}, ${L(pu*h.q)}. ¿Está disponible?`);
+}
+$('#h-o').addEventListener('click', e => { const b = e.target.closest('[data-opt]'); if (b) { h.v = b.dataset.opt; pintarHoja(); } });
+$('#h-mas').addEventListener('click', () => { h.q++; pintarHoja(); });
+$('#h-menos').addEventListener('click', () => { if (h.q > 1) { h.q--; pintarHoja(); } });
+$('#h-add').addEventListener('click', () => { agregar(h.id, h.v, h.q); cerrarTodo(); });
+
+function cerrarTodo() {
+  const abierta = $('#hoja').classList.contains('on');
+  $('#hoja').classList.remove('on'); $('#hoja').setAttribute('aria-hidden','true');
+  $('#bolsa').classList.remove('on'); $('#bolsa').setAttribute('aria-hidden','true');
+  $('#velo').classList.remove('on'); document.body.style.overflow = '';
+  if (abierta) h.foco?.focus?.({preventScroll:true});
+}
+$('#velo').addEventListener('click', cerrarTodo);
+
+/* =====================================================================
+   7. BOLSA (se guarda en el navegador)
+   ===================================================================== */
+let bolsa = (() => { try { return (JSON.parse(localStorage.getItem(KEY)) || []).filter(i => prod(i.id)); } catch { return []; } })();
+const guardar = () => { try { localStorage.setItem(KEY, JSON.stringify(bolsa)); } catch {} };
+const total = () => bolsa.reduce((a,i) => a + i.q * precio(prod(i.id), i.v), 0);
+const unidades = () => bolsa.reduce((a,i) => a + i.q, 0);
+
+let tt;
+function agregar(id, v, q) {
+  const ex = bolsa.find(i => i.id === id && i.v === v); ex ? ex.q += q : bolsa.push({ id, v, q });
+  guardar(); pintarBolsa();
+  const n = $('#bolsa-n'); n.classList.remove('pop'); void n.offsetWidth; n.classList.add('pop');
+  const x = prod(id), t = $('#toast');
+  t.innerHTML = `${imgTag(x.f, '', '40px', 'loading="eager"')}<div><b>Añadido a tu bolsa</b>${esc(x.n)}${v ? ' · ' + esc(v) : ''}</div><a href="#" class="btn btn-claro btn-s" data-abrir-bolsa style="pointer-events:auto;margin-left:6px">Ver bolsa</a>`;
+  t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 3200);
+}
+function pintarBolsa() {
+  const u = unidades(), n = $('#bolsa-n');
+  n.textContent = u; n.classList.toggle('on', u > 0);
+  $('#t-s').textContent = L(total()); $('#t-t').textContent = L(total());
+  $('#bolsa-f').style.display = bolsa.length ? '' : 'none';
+  if (!bolsa.length) { $('#items').innerHTML = `<div class="bolsa-vacia"><svg><use href="#i-bolsa"/></svg><p class="h-3" style="color:var(--ink)">Tu bolsa está vacía.</p><p style="margin-top:8px">Descubre la colección.</p><a href="#tienda" class="btn btn-primario" data-cerrar style="margin-top:22px">Ir a la tienda</a></div>`; return; }
+  $('#items').innerHTML = bolsa.map((i,k) => { const x = prod(i.id), pu = precio(x, i.v); return `
+    <div class="item"><div class="ii">${imgTag(x.f, x.n, '72px')}</div>
+      <div><h4>${esc(x.n)} · ${esc(x.s)}</h4><p class="v">${i.v ? esc(i.v) + ' · ' : ''}${L(pu)}</p><button class="quitar" data-quitar="${k}">Eliminar</button></div>
+      <div class="der"><span>${L(pu * i.q)}</span><div class="qty"><button data-menos="${k}" aria-label="Menos">−</button><span>${i.q}</span><button data-mas="${k}" aria-label="Más">+</button></div></div>
     </div>`; }).join('');
 }
 $('#items').addEventListener('click', e => {
   const d = e.target.dataset;
-  if (d.mas) sel[d.mas].q++;
-  else if (d.menos) sel[d.menos].q > 1 ? sel[d.menos].q-- : sel.splice(d.menos,1);
-  else if (d.quitar) sel.splice(d.quitar,1);
-  else if (e.target.closest('[data-cerrar]')) { cerrarPanel(); return; }
+  if (d.mas) bolsa[d.mas].q++;
+  else if (d.menos) bolsa[d.menos].q > 1 ? bolsa[d.menos].q-- : bolsa.splice(d.menos, 1);
+  else if (d.quitar) bolsa.splice(d.quitar, 1);
   else return;
-  guardar(); pintarSel();
+  guardar(); pintarBolsa();
 });
-$('#vaciar').addEventListener('click', () => { sel = []; guardar(); pintarSel(); });
-function abrirPanel(){ $('#panel').classList.add('on'); $('#velo').classList.add('on'); $('#panel').setAttribute('aria-hidden','false'); }
-function cerrarPanel(){ $('#panel').classList.remove('on'); $('#velo').classList.remove('on'); $('#panel').setAttribute('aria-hidden','true'); }
-$$('[data-abrir-panel]').forEach(b => b.addEventListener('click', abrirPanel));
-$('#cerrar-panel').addEventListener('click', cerrarPanel);
-$('#velo').addEventListener('click', cerrarPanel);
+$('#vaciar').addEventListener('click', () => { bolsa = []; guardar(); pintarBolsa(); });
+function abrirBolsa() { $('#toast').classList.remove('on'); $('#bolsa').classList.add('on'); $('#velo').classList.add('on'); $('#bolsa').setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden'; }
+document.addEventListener('click', e => { if (e.target.closest('[data-abrir-bolsa]')) { e.preventDefault(); abrirBolsa(); } });
 
-/* Finalizar por WhatsApp (sin pago en línea) */
 $('#finalizar').addEventListener('click', () => {
-  if (!sel.length) return;
-  const lista = sel.map((i,n) => { const x = P(i.id);
-    return `${n+1}. ${x.n}${i.v?' ('+i.v+')':''}\n   ${i.q} × ${L(x.p)} = ${L(x.p*i.q)}`; }).join('\n');
-  abrirWA(`Hola, Esencia & Brillo ✨\n\nMe gustaría realizar esta selección de su tienda en línea:\n\n${lista}\n\nTotal referencial: ${L(tot().s)}\n\n¿Me confirman disponibilidad, costo de envío y forma de pago? ¡Gracias!`);
+  if (!bolsa.length) return;
+  const lista = bolsa.map((i,n) => { const x = prod(i.id), pu = precio(x, i.v);
+    return `${n+1}. ${x.n} · ${x.s}${i.v ? ' (' + i.v + ')' : ''}\n   ${i.q} × ${L(pu)} = ${L(pu * i.q)}`; }).join('\n');
+  abrirWA(`Hola, Esencia & Brillo ✨\n\nMe gustaría hacer este pedido desde su tienda en línea:\n\n${lista}\n\nTotal referencial: ${L(total())}\n\n¿Me confirman disponibilidad, costo de envío y forma de pago? ¡Gracias!`);
 });
 
 /* =====================================================================
-   8. FICHA DE PRODUCTO (con zoom al pasar el cursor)
-   ===================================================================== */
-const m = { id:null, v:'', q:1 };
-function abrirFicha(id) {
-  const x = P(id); Object.assign(m, { id, v: x.o ? x.o.v[0] : '', q:1 });
-  $('#m-img').innerHTML = foto(x.f, x.n, 1400);
-  $('#m-l').textContent = `${linea(x.l).marca} · ${linea(x.l).nombre}`;
-  $('#m-n').textContent = x.n;
-  $('#m-d').textContent = x.d;
-  $('#m-f').innerHTML = Object.entries(x.ficha).map(([k,v]) => `<div><b>${esc(k)}</b>${esc(v)}</div>`).join('');
-  $('#m-ow').style.display = x.o ? '' : 'none';
-  if (x.o) $('#m-ot').textContent = x.o.t;
-  $('#m-r').innerHTML = RESENAS.map(r => `<div class="res"><span class="est">${r[0]}</span> · ${r[1]}<br>${r[2]}</div>`).join('');
-  pintarFicha();
-  $('#modal').classList.add('on'); $('#modal').setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden';
-  const mi = $('#m-img');
-  mi.onmousemove = ev => { const im = mi.querySelector('img'); if (!im) return; const r = mi.getBoundingClientRect();
-    im.style.transformOrigin = `${(ev.clientX-r.left)/r.width*100}% ${(ev.clientY-r.top)/r.height*100}%`; im.style.transform = 'scale(1.6)'; };
-  mi.onmouseleave = () => { const im = mi.querySelector('img'); if (im) im.style.transform = ''; };
-}
-function pintarFicha() {
-  const x = P(m.id);
-  if (x.o) $('#m-o').innerHTML = x.o.v.map(v => `<button class="opt ${v===m.v?'sel':''}" data-opt="${esc(v)}">${esc(v)}</button>`).join('');
-  $('#m-q').textContent = m.q;
-  $('#m-p').innerHTML = `${L(x.p*m.q)}<small>precio de ejemplo</small>`;
-  $('#m-wa').href = waURL(`Hola, quisiera consultar por ${x.n}${m.v?' ('+m.v+')':''} × ${m.q} — ${L(x.p*m.q)}. ¿Está disponible?`);
-}
-function cerrarFicha(){ $('#modal').classList.remove('on'); $('#modal').setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
-$('#m-o').addEventListener('click', e => { if (e.target.dataset.opt) { m.v = e.target.dataset.opt; pintarFicha(); } });
-$('#m-mas').addEventListener('click', () => { m.q++; pintarFicha(); });
-$('#m-menos').addEventListener('click', () => { if (m.q > 1) { m.q--; pintarFicha(); } });
-$('#m-add').addEventListener('click', () => { agregar(m.id, m.v, m.q); cerrarFicha(); setTimeout(abrirPanel, 350); });
-$$('[data-cerrar-modal]').forEach(b => b.addEventListener('click', cerrarFicha));
-
-/* =====================================================================
-   9. TESTIMONIOS (carrusel automático)
-   ===================================================================== */
-$('#slider').innerHTML = TESTIMONIOS.map((t,i) => `<div class="slide ${i?'':'on'}"><p>${t[0]}</p><small>${t[1]}</small></div>`).join('');
-$('#dots').innerHTML = TESTIMONIOS.map((_,i) => `<button class="${i?'':'on'}" data-dot="${i}" aria-label="Testimonio ${i+1}"></button>`).join('');
-let ti = 0;
-const irT = i => { ti = i; $$('.slide').forEach((s,k) => s.classList.toggle('on', k===i)); $$('[data-dot]').forEach((d,k) => d.classList.toggle('on', k===i)); };
-$('#dots').addEventListener('click', e => { if (e.target.dataset.dot) irT(+e.target.dataset.dot); });
-setInterval(() => irT((ti+1) % TESTIMONIOS.length), 6000);
-
-/* =====================================================================
-   10. FORMULARIO → WHATSAPP
+   8. FORMULARIO → WHATSAPP
    ===================================================================== */
 $('#form').addEventListener('submit', e => {
   e.preventDefault(); const f = e.target;
-  const en = f.nombre.value.trim().length < 2 ? 'Indica tu nombre' : '', et = f.mensaje.value.trim().length < 5 ? 'Cuéntanos un poco más' : '';
+  const en = f.nombre.value.trim().length < 2 ? 'Escribe tu nombre.' : '', et = f.mensaje.value.trim().length < 5 ? 'Cuéntanos un poco más.' : '';
   $('#e-n').textContent = en; $('#f-n').classList.toggle('mal', !!en);
   $('#e-t').textContent = et; $('#f-t').classList.toggle('mal', !!et);
-  if (en || et) return;
+  if (en || et) { (en ? $('#f-n') : $('#f-t')).focus(); return; }
   abrirWA(`Hola, Esencia & Brillo ✨\n\nNombre: ${f.nombre.value.trim()}\nCiudad: ${f.ciudad.value}\nMotivo: ${f.motivo.value}\n\n${f.mensaje.value.trim()}`);
   f.reset();
 });
-$('#wa-num').textContent = WA_NUMERO ? '+' + WA_NUMERO : 'Número por agregar';
+$('#wa-num').textContent = WA_NUMERO ? '+' + WA_NUMERO : 'Escríbenos desde el botón';
 
 /* =====================================================================
-   11. CONCIERGE VIRTUAL (respuestas automáticas)
+   9. ASISTENTE VIRTUAL (respuestas automáticas, sin datos inventados)
    ===================================================================== */
 const WA_A = `<a href="${waURL('Hola, tengo una consulta para Esencia & Brillo.')}" target="_blank" rel="noopener">WhatsApp</a>`;
 const INT = [
-  { k:['hola','buenas','buenos'], r:() => 'Bienvenida a Esencia & Brillo ✦ Soy Bella, tu concierge virtual. ¿Buscas algo para ti o para regalar?' },
-  { k:['producto','tienen','venden','coleccion','linea','catalogo'], r:() => 'Nuestra Maison tiene cinco líneas:\n' + LINEAS.map(x => `✦ ${x.marca}: ${x.desc.toLowerCase()}`).join('\n') },
-  { k:['perfume','locion','fragancia','mist','splash','aroma'], r:() => `En Maison Parfum encontrarás eau de parfum, lociones, body mists y splash desde ${L(Math.min(...PRODUCTOS.filter(x=>x.l==='fragancias').map(x=>x.p)))} (precios de ejemplo).` },
-  { k:['joya','collar','arete','argolla','pulsera','anillo','oro','acero'], r:() => 'Atelier Brillo trabaja en acero inoxidable y baño de oro: collares, argollas, pulseras y anillos. Varias piezas tienen tono o talla a elegir.' },
-  { k:['precio','cuesta','cuanto','vale'], r:() => `Los precios están visibles en cada pieza, desde ${L(Math.min(...PRODUCTOS.map(x=>x.p)))}. En esta simulación son referenciales.` },
-  { k:['pago','pagar','tarjeta','transferencia','efectivo'], r:() => 'Aceptamos transferencia bancaria y pago contra entrega. La tienda no cobra en línea: se coordina por WhatsApp.' },
-  { k:['envio','entrega','domicilio','ciudad','llega'], r:() => `Entregamos a domicilio en San Pedro Sula y enviamos a otras ciudades. Costo y tiempo aún por confirmar: te los damos por ${WA_A}.` },
-  { k:['cambio','devolucion','garantia'], r:() => `La política de cambios está por confirmar. Consúltala por ${WA_A} antes de comprar.` },
-  { k:['regalo','kit','coffret','cumpleanos','aniversario','set'], r:() => 'Le Cadeau ofrece coffrets listos y regalos a la medida. Cuéntanos la ocasión y tu presupuesto y te proponemos opciones.' },
-  { k:['horario','hora','abren','atienden'], r:() => `El horario está por confirmar. Escríbenos por ${WA_A} y te atendemos.` },
-  { k:['comprar','pedido','como','seleccion','ordenar'], r:() => 'Es muy sencillo:\n1. Abre una pieza y elige tono o talla.\n2. Añádela a tu selección.\n3. Toca “Finalizar por WhatsApp”.\n4. Confirmamos disponibilidad, envío y pago.' },
-  { k:['gracias','perfecto','genial'], r:() => 'Un placer ✦ Aquí estoy si necesitas algo más.' }
+  { k:['hola','buenas','buenos'], r:() => 'Hola, soy Bella ✨ ¿Buscas algo para ti o para regalar?' },
+  { k:['producto','tienen','venden','coleccion','linea','catalogo'], r:() => 'Tenemos cinco líneas:\n' + LINEAS.map(x => `• ${x.nombre} (${x.marca})`).join('\n') },
+  { k:['perfume','locion','fragancia','mist','splash','aroma'], r:() => `En Fragancias hay eau de parfum, lociones, body mist y splash, desde ${L(Math.min(...P.filter(x=>x.l==='fragancias').map(desde)))}.` },
+  { k:['joya','collar','arete','argolla','pulsera','anillo','oro','acero'], r:() => 'Nuestra joyería es de acero inoxidable con baño de oro. Varias piezas tienen tono, tamaño o talla para elegir.' },
+  { k:['precio','cuesta','cuanto','vale'], r:() => `Cada producto muestra su precio en lempiras, desde ${L(Math.min(...P.map(desde)))}. Son referenciales y se confirman al pedir.` },
+  { k:['pago','pagar','tarjeta','transferencia','efectivo'], r:() => 'Aceptamos transferencia bancaria y pago contra entrega. Este sitio no cobra en línea.' },
+  { k:['envio','entrega','domicilio','ciudad','llega'], r:() => `Entregamos a domicilio en San Pedro Sula y enviamos al resto del país. El costo y el tiempo te los confirmamos por ${WA_A}.` },
+  { k:['cambio','devolucion','garantia'], r:() => `Te explicamos las condiciones de cambio por ${WA_A} antes de comprar.` },
+  { k:['regalo','kit','coffret','cumpleanos','aniversario','set'], r:() => 'Tenemos kits listos y también armamos regalos a la medida. Cuéntanos la ocasión y tu presupuesto.' },
+  { k:['horario','hora','abren','atienden'], r:() => `Escríbenos por ${WA_A} y te atendemos.` },
+  { k:['comprar','pedido','como','bolsa','ordenar'], r:() => 'Es fácil:\n1. Abre un producto y elige opciones.\n2. Añádelo a tu bolsa.\n3. Toca “Finalizar por WhatsApp”.\n4. Te confirmamos disponibilidad, envío y pago.' },
+  { k:['gracias','perfecto','genial'], r:() => '¡Con gusto! ✨' }
 ];
-function responder(t) {
-  const s = norm(t); let best = null, pts = 0;
-  INT.forEach(i => { const n = i.k.filter(k => s.includes(k)).length; if (n > pts) { pts = n; best = i; } });
-  return best ? best.r() : `No tengo esa información confirmada. Para no darte datos incorrectos, una asesora te responde por ${WA_A}.`;
-}
-function msg(h, who) { const d = document.createElement('div'); d.className = 'msg ' + who; who==='yo' ? d.textContent = h : d.innerHTML = h; $('#msgs').appendChild(d); $('#msgs').scrollTop = 1e9; }
-function preguntar(t) { if (!t.trim()) return; msg(t,'yo');
-  const w = document.createElement('div'); w.className = 'msg bot typing'; w.innerHTML = '<i></i><i></i><i></i>'; $('#msgs').appendChild(w); $('#msgs').scrollTop = 1e9;
-  setTimeout(() => { w.remove(); msg(responder(t),'bot'); }, 700 + Math.random()*500); }
+function responder(t) { const s = norm(t); let best = null, pts = 0; INT.forEach(i => { const n = i.k.filter(k => s.includes(k)).length; if (n > pts) { pts = n; best = i; } }); return best ? best.r() : `No tengo ese dato confirmado. Para no darte información incorrecta, una asesora te responde por ${WA_A}.`; }
+function msg(hh, who) { const d = document.createElement('div'); d.className = 'msg ' + who; who === 'yo' ? d.textContent = hh : d.innerHTML = hh; $('#msgs').appendChild(d); $('#msgs').scrollTop = 1e9; }
+function preguntar(t) { if (!t.trim()) return; msg(t, 'yo'); const w = document.createElement('div'); w.className = 'msg bot typing'; w.innerHTML = '<i></i><i></i><i></i>'; $('#msgs').appendChild(w); $('#msgs').scrollTop = 1e9; setTimeout(() => { w.remove(); msg(responder(t), 'bot'); }, 650 + Math.random() * 450); }
 let chatIni = false;
-function toggleChat(on) { const c = $('#chat'); on = on ?? !c.classList.contains('on');
-  c.classList.toggle('on', on); c.setAttribute('aria-hidden', !on); $('#fab').setAttribute('aria-expanded', on);
-  if (on && !chatIni) { chatIni = true; msg('Bienvenida a <b>Esencia &amp; Brillo</b> ✦<br>Soy Bella, tu concierge virtual. ¿En qué puedo ayudarte?','bot'); }
-  if (on) setTimeout(() => $('#chat-in').focus(), 300); }
-$('#sugs').innerHTML = ['La colección','Fragancias','Joyería','Regalos','Envíos','Pagos','¿Cómo compro?'].map(s => `<button class="sug">${s}</button>`).join('');
+function chat(on) { const c = $('#chat'); on = on ?? !c.classList.contains('on'); c.classList.toggle('on', on); c.setAttribute('aria-hidden', !on); $('#fab').setAttribute('aria-expanded', on);
+  if (on && !chatIni) { chatIni = true; msg('Hola, soy Bella ✨ ¿En qué te ayudo?', 'bot'); }
+  if (on) setTimeout(() => $('#chat-in').focus({preventScroll:true}), 300); }
+$('#sugs').innerHTML = ['¿Cómo compro?','Pagos','Envíos','Fragancias','Regalos'].map(s => `<button class="sug">${s}</button>`).join('');
 $('#sugs').addEventListener('click', e => { if (e.target.matches('.sug')) preguntar(e.target.textContent); });
 $('#chat-f').addEventListener('submit', e => { e.preventDefault(); preguntar($('#chat-in').value); $('#chat-in').value = ''; });
-$('#fab').addEventListener('click', () => toggleChat());
-$('#cerrar-chat').addEventListener('click', () => toggleChat(false));
+$('#fab').addEventListener('click', () => chat());
+$('#cerrar-chat').addEventListener('click', () => chat(false));
 
 /* =====================================================================
-   12. CURSOR, REVELADO Y ARRANQUE
+   10. ANIMACIONES AL HACER SCROLL Y ARRANQUE
    ===================================================================== */
-const cur = $('#cursor');
-if (matchMedia('(pointer:fine)').matches) {
-  let x=-100,y=-100,cx=-100,cy=-100;
-  addEventListener('mousemove', e => { x = e.clientX; y = e.clientY; });
-  (function loop(){ cx += (x-cx)*.2; cy += (y-cy)*.2; cur.style.transform = `translate(${cx}px,${cy}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
-  document.addEventListener('mouseover', e => cur.classList.toggle('grande', !!e.target.closest('[data-cursor]') && !e.target.closest('button')));
-}
-const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold:.12 });
-$$('.rv').forEach(el => io.observe(el));
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin:'0px 0px -8% 0px', threshold:.08 }) : null;
+function observar() { $$('.rv:not(.in)').forEach(el => io ? io.observe(el) : el.classList.add('in')); }
 
-montarFotos();
-pintarTienda();
-pintarSel();
-onScroll();
-let abierto = false;
-function abrirSitio() {
-  if (abierto) return; abierto = true;
-  $('#intro').classList.add('fuera'); document.body.classList.remove('bloqueado');
-  setTimeout(() => $('.hero').classList.add('vivo'), 400);
-}
-addEventListener('load', () => setTimeout(abrirSitio, 1600));
-setTimeout(abrirSitio, 3500); /* respaldo si alguna foto tarda en cargar */
+/* Datos estructurados (SEO) */
+const ld = document.createElement('script'); ld.type = 'application/ld+json';
+ld.textContent = JSON.stringify({ '@context':'https://schema.org', '@type':'Store', name:'Esencia & Brillo', url:location.origin + location.pathname,
+  address:{ '@type':'PostalAddress', addressLocality:'San Pedro Sula', addressRegion:'Cortés', addressCountry:'HN' }, currenciesAccepted:'HNL', paymentAccepted:'Transferencia bancaria, pago contra entrega',
+  hasOfferCatalog:{ '@type':'OfferCatalog', name:'Catálogo', itemListElement: P.map(x => ({ '@type':'Offer', priceCurrency:'HNL', price:desde(x), itemOffered:{ '@type':'Product', name:`${x.n} · ${x.s}`, description:x.d, image:new URL(`img/hd/${x.f}-1600.webp`, location.href).href } })) } });
+document.head.appendChild(ld);
+
+pintar();
+pintarBolsa();
+observar();
 </script>
 </body>
 </html>
