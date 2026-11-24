@@ -95,7 +95,8 @@ button{cursor:pointer;background:none;border:0}
 .gnav .wrap-l{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:1024px}
 .logo{display:flex;align-items:center;gap:9px;color:var(--ink);text-decoration:none!important}
 .logo svg{width:26px;height:26px}
-.logo span{font-family:var(--serif);font-size:16px;font-weight:500;letter-spacing:.14em}
+.logo span{font-family:var(--serif);font-size:16px;font-weight:500;letter-spacing:.14em;white-space:nowrap}
+@media (max-width:600px){.logo span{font-size:13px;letter-spacing:.1em}}
 .gnav ul{display:flex;list-style:none;gap:clamp(14px,2.6vw,36px)}
 .gnav ul a{color:var(--ink);opacity:.8;font-size:12px;letter-spacing:-.01em;transition:opacity .2s}
 .gnav ul a:hover{opacity:1;text-decoration:none}
