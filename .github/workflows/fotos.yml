@@ -41,6 +41,11 @@ jobs:
             set-joyeria.jpg photo-1586878340506-af074f2ee999
             crema.jpg photo-1642683496509-121deffa9cf0
             maison.jpg photo-1620650893164-fb56b7e66067
+            c-frasco-rojo.jpg photo-1720423738890-37689a6f6b95
+            c-frasco-claro.jpg photo-1615634260167-c8cdede054de
+            c-anillos-vitrina.jpg photo-1689070901068-a7cae2bbc36f
+            c-anillos-bandeja.jpg photo-1586878341340-1971696a9b71
+            c-frasco-negro.jpg photo-1584841247175-4d766cefa018
           LISTA
           ls -la img
       - name: Guardar en el repositorio
