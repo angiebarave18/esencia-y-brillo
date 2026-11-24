@@ -1,0 +1,19 @@
+# nombre  fuente (ID de Unsplash o URL completa). Fotos genéricas sin marca, licencias Unsplash/Pexels.
+perfume-ambar   photo-1621275155732-2bff82c64fd2
+perfume-noir    photo-1760920250029-36af9369a0bb
+locion-floral   photo-1602928309809-776bf9db8658
+body-mist       https://images.pexels.com/photos/8167156/pexels-photo-8167156.jpeg
+splash          photo-1720423738890-37689a6f6b95
+collar-corazon  photo-1761211115639-54394f139142
+argollas        photo-1619203451989-53f6d2ca0e57
+pulsera         photo-1602527418456-8b5cd2c7a4c2
+anillo          photo-1611955167811-4711904bb9f8
+aretes          photo-1704445010872-2faefdd733aa
+cadena          photo-1611107683227-e9060eccd846
+reloj           photo-1751437774882-deeea4352018
+bolso           photo-1612902456551-333ac5afa26e
+lentes          photo-1511499767150-a48a237f0083
+caja-regalo     photo-1764650909534-ebe7b1206466
+set-joyeria     photo-1586878340506-af074f2ee999
+crema           photo-1642683496509-121deffa9cf0
+bandeja         photo-1586878341340-1971696a9b71

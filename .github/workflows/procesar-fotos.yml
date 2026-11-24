@@ -1,0 +1,34 @@
+name: Procesar fotos (quitar fondo y 4K)
+
+on:
+  push:
+    paths:
+      - 'tools/fotos.txt'
+      - 'tools/procesar_fotos.py'
+      - '.github/workflows/procesar-fotos.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  procesar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar dependencias
+        run: pip install "rembg[cpu]" pillow
+      - name: Quitar fondos y generar tamaños
+        run: python tools/procesar_fotos.py
+      - name: Guardar en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add img/hd tools/revision-recortes.jpg
+          git diff --cached --quiet || git commit -m "Fotos sin fondo en alta resolución"
+          git pull --rebase
+          git push
