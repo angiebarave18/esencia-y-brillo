@@ -21,7 +21,8 @@ jobs:
           while read -r archivo id; do
             [ -z "$archivo" ] && continue
             echo "Descargando $archivo"
-            curl -fsSL --retry 3 -o "img/$archivo" "https://images.unsplash.com/$id?auto=format&fit=crop&w=1400&q=80&fm=jpg"
+            case "$id" in http*) url="$id";; *) url="https://images.unsplash.com/$id?auto=format&fit=crop&w=1400&q=80&fm=jpg";; esac
+            curl -fsSL --retry 3 -o "img/$archivo" "$url"
           done <<'LISTA'
             perfume-ambar.jpg photo-1621275155732-2bff82c64fd2
             perfume-noir.jpg photo-1760920250029-36af9369a0bb
@@ -46,6 +47,7 @@ jobs:
             c-anillos-vitrina.jpg photo-1689070901068-a7cae2bbc36f
             c-anillos-bandeja.jpg photo-1586878341340-1971696a9b71
             c-frasco-negro.jpg photo-1584841247175-4d766cefa018
+            c-spray.jpg https://images.pexels.com/photos/8167156/pexels-photo-8167156.jpeg?auto=compress&w=1400
           LISTA
           ls -la img
       - name: Guardar en el repositorio
