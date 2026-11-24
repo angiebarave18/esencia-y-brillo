@@ -21,13 +21,13 @@ jobs:
           while read -r archivo id; do
             [ -z "$archivo" ] && continue
             echo "Descargando $archivo"
-            case "$id" in http*) url="$id";; *) url="https://images.unsplash.com/$id?auto=format&fit=crop&w=1400&q=80&fm=jpg";; esac
+            case "$id" in http*) url="$id";; *) url="https://images.unsplash.com/$id?auto=format&fit=crop&w=1000&q=75&fm=jpg";; esac
             curl -fsSL --retry 3 -o "img/$archivo" "$url"
           done <<'LISTA'
             perfume-ambar.jpg photo-1621275155732-2bff82c64fd2
             perfume-noir.jpg photo-1760920250029-36af9369a0bb
             locion-floral.jpg photo-1615634260167-c8cdede054de
-            body-mist.jpg https://images.pexels.com/photos/8167156/pexels-photo-8167156.jpeg?auto=compress&w=1400
+            body-mist.jpg https://images.pexels.com/photos/8167156/pexels-photo-8167156.jpeg?auto=compress&w=1000
             splash.jpg photo-1720423738890-37689a6f6b95
             collar-corazon.jpg photo-1761211115639-54394f139142
             argollas.jpg photo-1619203451989-53f6d2ca0e57
