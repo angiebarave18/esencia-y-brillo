@@ -26,9 +26,9 @@ jobs:
           done <<'LISTA'
             perfume-ambar.jpg photo-1621275155732-2bff82c64fd2
             perfume-noir.jpg photo-1760920250029-36af9369a0bb
-            locion-floral.jpg photo-1610113909607-2110f8401d92
-            body-mist.jpg photo-1720967361123-9c17ec9025dc
-            splash.jpg photo-1634944119598-837431c4900a
+            locion-floral.jpg photo-1615634260167-c8cdede054de
+            body-mist.jpg https://images.pexels.com/photos/8167156/pexels-photo-8167156.jpeg?auto=compress&w=1400
+            splash.jpg photo-1720423738890-37689a6f6b95
             collar-corazon.jpg photo-1761211115639-54394f139142
             argollas.jpg photo-1619203451989-53f6d2ca0e57
             pulsera.jpg photo-1602527418456-8b5cd2c7a4c2
@@ -41,13 +41,7 @@ jobs:
             caja-regalo.jpg photo-1764650909534-ebe7b1206466
             set-joyeria.jpg photo-1586878340506-af074f2ee999
             crema.jpg photo-1642683496509-121deffa9cf0
-            maison.jpg photo-1620650893164-fb56b7e66067
-            c-frasco-rojo.jpg photo-1720423738890-37689a6f6b95
-            c-frasco-claro.jpg photo-1615634260167-c8cdede054de
-            c-anillos-vitrina.jpg photo-1689070901068-a7cae2bbc36f
-            c-anillos-bandeja.jpg photo-1586878341340-1971696a9b71
-            c-frasco-negro.jpg photo-1584841247175-4d766cefa018
-            c-spray.jpg https://images.pexels.com/photos/8167156/pexels-photo-8167156.jpeg?auto=compress&w=1400
+            maison.jpg photo-1586878341340-1971696a9b71
           LISTA
           ls -la img
       - name: Guardar en el repositorio

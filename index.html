@@ -5,7 +5,7 @@
      ESENCIA & BRILLO · Maison de fragancias y joyería
      Simulación de tienda en línea · Comercio Electrónico · Grupo 2 · UTH
      Un solo archivo (HTML + CSS + JS) listo para GitHub Pages.
-     Fotografías: Unsplash (licencia libre), cargadas desde images.unsplash.com
+     Fotografías: Unsplash y Pexels (licencia libre), cargadas desde images.unsplash.com
      ===================================================================== -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -599,7 +599,7 @@ footer a:hover{color:var(--ivory)}
     </div>
     <p class="conteo" id="conteo" aria-live="polite"></p>
     <div class="grid" id="grid"></div>
-    <p class="nota-demo">Simulación académica · Precios referenciales de ejemplo en lempiras · Fotografías ilustrativas de Unsplash.</p>
+    <p class="nota-demo">Simulación académica · Precios referenciales de ejemplo en lempiras · Fotografías ilustrativas de Unsplash y Pexels.</p>
   </div>
 </section>
 
@@ -608,7 +608,7 @@ footer a:hover{color:var(--ivory)}
   <div class="wrap">
     <div class="maison-grid">
       <div class="maison-img rv">
-        <div class="ph m1" data-src="photo-1620650893164-fb56b7e66067" data-w="1200" data-alt="Collar junto a un frasco de perfume y rosas"></div>
+        <div class="ph m1" data-src="photo-1586878341340-1971696a9b71" data-w="1200" data-alt="Bandeja de madera con joyas doradas"></div>
         <div class="ph m2" data-src="photo-1586878340506-af074f2ee999" data-w="800" data-alt="Brazaletes y collar dorados en bandeja"></div>
       </div>
       <div>
@@ -715,7 +715,7 @@ footer a:hover{color:var(--ivory)}
       <div><h5>Maison</h5><ul><li><a href="#maison">Nuestra historia</a></li><li><a href="#contacto">Contacto</a></li><li><a href="#" data-concierge>Concierge</a></li></ul></div>
       <div><h5>Proyecto</h5><ul><li>Comercio Electrónico · Grupo 2</li><li>Maestría en Dirección Empresarial y Comercio Internacional</li><li>UTH · 2026</li></ul></div>
     </div>
-    <div class="legal"><span>© 2026 Esencia &amp; Brillo · Simulación académica de tienda en línea</span><span>Productos, precios y testimonios de ejemplo · Fotografías: Unsplash</span></div>
+    <div class="legal"><span>© 2026 Esencia &amp; Brillo · Simulación académica de tienda en línea</span><span>Productos, precios y testimonios de ejemplo · Fotografías: Unsplash y Pexels</span></div>
   </div>
 </footer>
 
@@ -790,9 +790,9 @@ const KEY = 'eyb_seleccion_v2';
 const FOTOS = {
   'photo-1621275155732-2bff82c64fd2':'perfume-ambar.jpg',
   'photo-1760920250029-36af9369a0bb':'perfume-noir.jpg',
-  'photo-1610113909607-2110f8401d92':'locion-floral.jpg',
-  'photo-1720967361123-9c17ec9025dc':'body-mist.jpg',
-  'photo-1634944119598-837431c4900a':'splash.jpg',
+  'photo-1615634260167-c8cdede054de':'locion-floral.jpg',
+  'PEXELS-8167156':'body-mist.jpg',
+  'photo-1720423738890-37689a6f6b95':'splash.jpg',
   'photo-1761211115639-54394f139142':'collar-corazon.jpg',
   'photo-1619203451989-53f6d2ca0e57':'argollas.jpg',
   'photo-1602527418456-8b5cd2c7a4c2':'pulsera.jpg',
@@ -805,9 +805,9 @@ const FOTOS = {
   'photo-1764650909534-ebe7b1206466':'caja-regalo.jpg',
   'photo-1586878340506-af074f2ee999':'set-joyeria.jpg',
   'photo-1642683496509-121deffa9cf0':'crema.jpg',
-  'photo-1620650893164-fb56b7e66067':'maison.jpg'
+  'photo-1586878341340-1971696a9b71':'maison.jpg'
 };
-const remota = (id, w=900) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=78`;
+const remota = (id, w=900) => id.startsWith('PEXELS-') ? `https://images.pexels.com/photos/${id.slice(7)}/pexels-photo-${id.slice(7)}.jpeg?auto=compress&w=${w}` : `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=78`;
 const img = (id, w=900) => FOTOS[id] ? 'img/' + FOTOS[id] : remota(id, w);
 const waURL = t => `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(t)}`;
 const abrirWA = t => window.open(waURL(t), '_blank', 'noopener');
@@ -831,13 +831,13 @@ const PRODUCTOS = [
     o:{t:'Contenido', v:['50 ml','100 ml']} },
   { id:'noir-intense', l:'fragancias', n:'Noir Intense · Parfum', p:1290, f:'photo-1760920250029-36af9369a0bb', e:'Nuevo',
     d:'Cristal transparente y tapa negra. Notas amaderadas y especiadas, elegantes y profundas.', ficha:{Tipo:'Parfum', Familia:'Amaderada', Contenido:'100 ml', Ocasión:'Noche'} },
-  { id:'blanc-floral', l:'fragancias', n:'Blanc Floral · Loción', p:780, f:'photo-1610113909607-2110f8401d92',
-    d:'Una loción luminosa de flores blancas, perfecta para el día y la oficina.', ficha:{Tipo:'Loción', Familia:'Floral', Contenido:'100 ml', Ocasión:'Día'} },
-  { id:'jardin-mist', l:'fragancias', n:'Jardín · Body Mist', p:420, f:'photo-1720967361123-9c17ec9025dc',
-    d:'Bruma corporal fresca y verde, para perfumar suavemente después de la ducha.', ficha:{Tipo:'Body mist', Familia:'Verde', Contenido:'250 ml', Ocasión:'Diario'},
-    o:{t:'Aroma', v:['Jardín','Vainilla','Frutos rojos']} },
-  { id:'cristal-splash', l:'fragancias', n:'Cristal · Splash', p:340, f:'photo-1634944119598-837431c4900a',
-    d:'Splash ligero de notas acuáticas, ideal para el clima cálido de San Pedro Sula.', ficha:{Tipo:'Splash', Familia:'Acuática', Contenido:'250 ml', Ocasión:'Diario'} },
+  { id:'blanc-floral', l:'fragancias', n:'Blanc Floral · Loción', p:780, f:'photo-1615634260167-c8cdede054de',
+    d:'Una loción luminosa de flores blancas en frasco de cristal, perfecta para el día y la oficina.', ficha:{Tipo:'Loción', Familia:'Floral', Contenido:'100 ml', Ocasión:'Día'} },
+  { id:'jardin-mist', l:'fragancias', n:'Jardín · Body Mist', p:420, f:'PEXELS-8167156',
+    d:'Bruma corporal fresca con notas cítricas, para perfumar suavemente después de la ducha.', ficha:{Tipo:'Body mist', Familia:'Cítrica', Contenido:'250 ml', Ocasión:'Diario'},
+    o:{t:'Aroma', v:['Cítrico','Vainilla','Coco']} },
+  { id:'cristal-splash', l:'fragancias', n:'Rouge · Body Splash', p:340, f:'photo-1720423738890-37689a6f6b95',
+    d:'Splash ligero de notas frutales y frutos rojos, ideal para el clima cálido de San Pedro Sula.', ficha:{Tipo:'Body splash', Familia:'Frutal', Contenido:'250 ml', Ocasión:'Diario'} },
 
   { id:'coeur-or', l:'joyeria', n:'Collar Cœur d’Or', p:690, f:'photo-1761211115639-54394f139142', e:'Favorito',
     d:'Dije de corazón con detalle envuelto en baño de oro. Un clásico para regalar.', ficha:{Material:'Acero con baño de oro', Largo:'45 cm', Cierre:'Mosquetón', Hipoalergénico:'Sí'},
