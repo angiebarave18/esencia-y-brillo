@@ -44,10 +44,16 @@ jobs:
             maison.jpg photo-1586878341340-1971696a9b71
           LISTA
           ls -la img
+      - name: Descargar tipografías (licencia OFL)
+        run: |
+          mkdir -p fonts
+          curl -fsSL -o "fonts/BodoniModa.ttf" "https://raw.githubusercontent.com/google/fonts/main/ofl/bodonimoda/BodoniModa%5Bopsz,wght%5D.ttf"
+          curl -fsSL -o "fonts/BodoniModa-Italic.ttf" "https://raw.githubusercontent.com/google/fonts/main/ofl/bodonimoda/BodoniModa-Italic%5Bopsz,wght%5D.ttf"
+          curl -fsSL -o "fonts/Jost.ttf" "https://raw.githubusercontent.com/google/fonts/main/ofl/jost/Jost%5Bwght%5D.ttf"
       - name: Guardar en el repositorio
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add img
+          git add img fonts
           git diff --cached --quiet || git commit -m "Agregar fotos de productos (Unsplash)"
           git push
