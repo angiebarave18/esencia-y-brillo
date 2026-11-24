@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Instalar dependencias
-        run: pip install "rembg[cpu]" pillow
+        run: pip install "rembg[cpu]" pillow scipy numpy
       - name: Quitar fondos y generar tamaños
         run: python tools/procesar_fotos.py
       - name: Guardar en el repositorio

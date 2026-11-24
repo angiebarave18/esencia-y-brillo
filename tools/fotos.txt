@@ -1,19 +1,23 @@
 # nombre  fuente (ID de Unsplash o URL completa). Fotos genéricas sin marca, licencias Unsplash/Pexels.
 perfume-ambar   photo-1621275155732-2bff82c64fd2
 perfume-noir    photo-1760920250029-36af9369a0bb
-locion-floral   photo-1602928309809-776bf9db8658
-body-mist       https://images.pexels.com/photos/8167156/pexels-photo-8167156.jpeg
+locion-floral   photo-1761659760494-32b921a2449f
+body-mist       https://images.pexels.com/photos/8167156/pexels-photo-8167156.jpeg recorte=0.42,0.25,0.81,0.86
 splash          photo-1720423738890-37689a6f6b95
 collar-corazon  photo-1761211115639-54394f139142
 argollas        photo-1619203451989-53f6d2ca0e57
-pulsera         photo-1602527418456-8b5cd2c7a4c2
+pulsera         photo-1602527418456-8b5cd2c7a4c2 principal
 anillo          photo-1611955167811-4711904bb9f8
 aretes          photo-1704445010872-2faefdd733aa
 cadena          photo-1611107683227-e9060eccd846
-reloj           photo-1751437774882-deeea4352018
-bolso           photo-1612902456551-333ac5afa26e
+reloj           photo-1751437774882-deeea4352018 principal
+bolso           photo-1598532163257-ae3c6b2524b6
 lentes          photo-1511499767150-a48a237f0083
 caja-regalo     photo-1764650909534-ebe7b1206466
 set-joyeria     photo-1586878340506-af074f2ee999
-crema           photo-1642683496509-121deffa9cf0
-bandeja         photo-1586878341340-1971696a9b71
+or-noir         photo-1594035910387-fea47794261f
+# candidatas alternativas (para comparar)
+c-bolso-2       photo-1600857062241-98e5dba7f214
+c-bolso-3       photo-1605733513597-a8f8341084e6
+c-perfume-2     photo-1458538977777-0549b2370168
+c-perfume-3     photo-1585218334450-afcf929da36e

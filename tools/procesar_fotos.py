@@ -2,6 +2,8 @@
 recorta al producto y exporta WebP con transparencia en 3840, 1600 y 800 px.
 Se ejecuta en GitHub Actions (.github/workflows/procesar-fotos.yml)."""
 import io, os, sys, urllib.request
+import numpy as np
+from scipy import ndimage
 from PIL import Image, ImageDraw
 from rembg import remove, new_session
 
@@ -24,12 +26,27 @@ lista = [l.split() for l in open('tools/fotos.txt', encoding='utf-8') if l.strip
 solo = set(sys.argv[1:])
 revision = []
 
-for nombre, fuente in lista:
+for nombre, fuente, *opciones in lista:
     if solo and nombre not in solo:
         continue
-    print('Procesando', nombre, flush=True)
+    if not solo and os.path.exists(f'{SALIDA}/{nombre}-800.webp'):
+        continue  # ya procesada; borra sus archivos para rehacerla
+    print('Procesando', nombre, opciones, flush=True)
     original = descargar(url_de(fuente))
+    for op in opciones:  # recorte=x0,y0,x1,y1 (fracciones) antes de quitar el fondo
+        if op.startswith('recorte='):
+            x0, y0, x1, y1 = map(float, op[8:].split(','))
+            W, H = original.size
+            original = original.crop((int(x0*W), int(y0*H), int(x1*W), int(y1*H)))
     recorte = remove(original, session=sesion, post_process_mask=True)
+    if 'principal' in opciones:  # conserva solo la pieza principal (quita objetos sueltos)
+        a = np.array(recorte.getchannel('A'))
+        etiquetas, n = ndimage.label(a > 32)
+        if n > 1:
+            areas = ndimage.sum(np.ones_like(a), etiquetas, range(1, n + 1))
+            mayor = int(np.argmax(areas)) + 1
+            a[etiquetas != mayor] = 0
+            recorte.putalpha(Image.fromarray(a))
     alfa = recorte.getchannel('A')
     caja = alfa.point(lambda a: 255 if a > 10 else 0).getbbox()
     if caja:
