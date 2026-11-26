@@ -473,6 +473,16 @@ footer a:hover{color:var(--ivory)}
 /* =====================================================================
    19. CONCIERGE
    ===================================================================== */
+.wa-fab{position:fixed;right:24px;bottom:92px;z-index:150;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold-l),var(--gold) 55%,var(--gold-d));color:var(--noir);box-shadow:0 16px 40px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .5s var(--ease)}
+.wa-fab:hover{transform:translateY(-3px) scale(1.04)}
+.wa-fab svg{width:26px;height:26px}
+.wa-fab::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--gold);opacity:.5;animation:waPulso 2.8s var(--ease) infinite}
+@keyframes waPulso{0%{transform:scale(.9);opacity:.6}100%{transform:scale(1.25);opacity:0}}
+@media (prefers-reduced-motion:reduce){.wa-fab::after{animation:none}}
+@media (max-width:600px){.wa-fab{right:16px;bottom:96px;width:52px;height:52px}}
+@media (max-width:420px){.marca b{font-size:12.5px;letter-spacing:.16em}.nav-acc .ico{width:40px}}
+@media (max-width:340px){#ir-buscar{display:none}.marca svg{display:none}}
+@media (max-width:380px){.marca{gap:8px}.marca b{font-size:11px;letter-spacing:.12em}.marca svg{width:26px;height:26px}.nav-acc .ico{width:36px}.nav-acc{gap:2px}}
 .fab{position:fixed;right:24px;bottom:24px;z-index:150;display:flex;align-items:center;gap:12px;height:56px;padding:0 22px 0 8px;border-radius:28px;background:rgba(14,12,11,.9);backdrop-filter:blur(16px);color:var(--ivory);border:1px solid var(--line-d);box-shadow:0 16px 40px rgba(0,0,0,.3);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;transition:transform .5s var(--ease)}
 .fab:hover{transform:translateY(-3px)}
 .av{width:40px;height:40px;border-radius:50%;background:var(--oro-grad);display:grid;place-items:center;color:var(--noir);font-family:var(--serif);font-style:italic;font-size:19px;letter-spacing:0;position:relative;flex:0 0 auto}
@@ -520,7 +530,7 @@ footer a:hover{color:var(--ivory)}
 @media (max-width:1180px){.nav-r li:nth-child(2){display:none}}
 @media (max-width:900px){.nav-r{display:none}}
 @media (max-width:900px){
-  .nav .wrap{grid-template-columns:auto 1fr}
+  .nav .wrap{grid-template-columns:auto 1fr;gap:8px}
   .nav ul{position:fixed;top:112px;left:0;right:0;height:calc(100vh - 112px);flex-direction:column;align-items:center;justify-content:center;gap:28px;background:var(--noir);color:var(--ivory);font-size:16px;opacity:0;visibility:hidden;transition:opacity .45s,visibility .45s}
   .nav ul.on{opacity:1;visibility:visible}
   .marca{order:-1}
@@ -872,6 +882,7 @@ footer a:hover{color:var(--ivory)}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ============================== CONCIERGE ============================== -->
+<a class="wa-fab" href="#" data-wa-general aria-label="Escribir por WhatsApp a +504 3186-6583"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg></a>
 <button class="fab" id="fab" aria-label="Abrir concierge" aria-expanded="false"><span class="av">B</span><span class="lbl">Concierge</span></button>
 <div class="chat" id="chat" role="dialog" aria-label="Concierge virtual" aria-hidden="true">
   <div class="chat-h"><span class="av">B</span><div><b>Bella</b><small>Concierge virtual</small></div><button class="cerrar" id="cerrar-chat" aria-label="Cerrar"><svg><use href="#i-x"/></svg></button></div>
@@ -884,9 +895,8 @@ footer a:hover{color:var(--ivory)}
 /* =====================================================================
    1. CONFIGURACIÓN
    WA_NUMERO: WhatsApp Business con código de país, sin signos (ej. '504XXXXXXXX').
-   Vacío = WhatsApp abre el mensaje y deja elegir el contacto.
    ===================================================================== */
-const WA_NUMERO = '';
+const WA_NUMERO = '50431866583';
 const KEY = 'eyb_bolsa_v3';
 const waURL = t => `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(t)}`;
 const abrirWA = t => window.open(waURL(t), '_blank', 'noopener');
@@ -1132,7 +1142,7 @@ $('#form').addEventListener('submit', e => {
   abrirWA(`Hola, Esencia & Brillo ✨\n\nNombre: ${f.nombre.value.trim()}\nCiudad: ${f.ciudad.value}\nMotivo: ${f.motivo.value}\n\n${f.mensaje.value.trim()}`);
   f.reset();
 });
-$('#wa-num').textContent = WA_NUMERO ? '+' + WA_NUMERO : 'Escríbenos desde el botón';
+$('#wa-num').textContent = '+504 3186-6583';
 
 /* =====================================================================
    9. CONCIERGE VIRTUAL (respuestas automáticas, sin datos inventados)
